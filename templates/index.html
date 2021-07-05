@@ -1,0 +1,230 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="content-wrapper">
+    <header class="wrapper bg-soft-primary">
+        <nav class="navbar center-nav transparent navbar-expand-lg navbar-light">
+            <div class="container flex-lg-row flex-nowrap align-items-center">
+                <div class="navbar-brand"><a href={% url 'home' %}><img class='logoimg' src={% static "/img/logo.png" %} alt=""/></a></div>
+                <div class="navbar-collapse offcanvas-nav">
+                    <div class="offcanvas-header d-lg-none d-xl-none">
+                        <a href={% url 'home' %}><img class='logoimg'
+                                src={% static "/img/logo-light.png" %} srcset={% static "/img/logo-light@2x.png 2x" %}
+                                alt=""/></a>
+                        <button type="button" class="btn-close btn-close-white offcanvas-close offcanvas-nav-close"
+                                aria-label="Close"></button>
+                    </div>
+                    <ul class="navbar-nav">
+
+
+                        <li class="nav-item "><a class="nav-link" href={% url 'category' %}>Каталог</a>
+
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href={% url 'contact' %}>Контакты</a>
+
+                        </li>
+                        <li class="nav-item "><a class="nav-link" href={% url 'news' %}>Новости</a>
+
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link" href={% url 'punkty' %}>Пункты приема</a>
+
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="navbar-other w-20 d-flex ms-auto">
+                    <h3> (44) 746-52-92</h3>
+                    <!-- /.navbar-nav -->
+                </div>
+                <!-- /.navbar-other -->
+            </div>
+            <!-- /.container -->
+        </nav>
+        <!-- /.navbar -->
+    </header>
+    <!-- /header -->
+    <section class="wrapper bg-soft-primary">
+        <div class="container pt-10 pt-md-14 pb-14 pb-md-0">
+            <div class="row gx-md-8 gx-lg-12 gy-3 gy-lg-0 mb-13">
+                <div class="col-lg-6">
+                    <h1 class="display-1 fs-66 lh-xs mb-0">Мы бесплатно забираем бытовую технику и скупаем
+                        радиодетали</h1>
+                </div>
+                <!-- /column -->
+                <div class="col-lg-6">
+                    <br class="lead fs-25 my-3">Если вы хотите сдать бытовую технику - закажите обратный звонок или
+                    свяжитесь с нами по телефону:</br>+375(44) 746-52-92</p>
+                    <a href="#" class="btn btn-violet rounded-pill mb-2 me-1">Заказать звонок</a>
+                    <a href="#" class="btn btn-violet rounded-pill mb-2 me-1">Онлайн заявка</a>
+                </div>
+                <!-- /column -->
+            </div>
+            <!-- /.row -->
+            <div class="position-relative formGlobal">
+                <div class="calcForm">
+
+                    <form>
+                        <div id="calcForm">
+
+
+                        </div>
+                        <div class="form-row calcItemSec">
+                                <a onclick="addNewProduct()" class="btn btn-violet rounded-pill mb-2 me-1">+</a>
+
+                           <div>
+                               <a class="btn btn-violet rounded-pill mb-2 me-1" data-bs-toggle="modal" data-bs-target="#modal-02">Оформить продажу</a>
+                               <span class="badge bg-yellow rounded-pill summarycalc">Итого: <span id="finalprice">0</span></span>
+
+                           </div>
+                           </div>
+                    </form>
+                </div>
+                <div class="shape bg-dot primary rellax w-17 h-21" data-rellax-speed="1"
+                     style="top: -2.5rem; right: -2.7rem;"></div>
+            </div>
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /section -->
+    <section class="wrapper bg-light">
+        <div class="container pt-15">
+            <div class="row gx-md-5 gy-5 mt-n18  ">
+                <div class="col-md-6 col-xl-3">
+                    <div class="card shadow-lg">
+                        <div class="card-body">
+                            <img src={% static "img/icons/browser.svg" %}
+                                 class="svg-inject icon-svg icon-svg-md text-yellow mb-3" alt=""/>
+
+                            <h4>Скупка радиодеталей у физических<br/>лиц</h4>
+                            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta
+                                gravida at eget metus cras justo.</p>
+                            <a href="{% url 'skupka' %}" class="more hover link-yellow">Прайс-лист</a>
+                        </div>
+                        <!--/.card-body -->
+                    </div>
+                    <!--/.card -->
+                </div>
+                <!--/column -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="card shadow-lg">
+                        <div class="card-body">
+                            <img src={% static "img/icons/chat-2.svg"%} class="svg-inject icon-svg icon-svg-md text-green mb-3"
+                                 alt=""/>
+
+                            <h4>Определение технического состояния</h4>
+                            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta
+                                gravida at eget metus cras justo.</p>
+                            <a href="#" class="more hover link-green">Подробнее</a>
+                        </div>
+                        <!--/.card-body -->
+                    </div>
+                    <!--/.card -->
+                </div>
+                <!--/column -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="card shadow-lg">
+                        <div class="card-body">
+                            <img src={% static "img/icons/id-card.svg"%} class="svg-inject icon-svg icon-svg-md text-orange mb-3" alt=""/>
+
+                            <h4>Переработка лома и отходов драг металлов</h4>
+                            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta
+                                gravida at eget metus cras justo.</p>
+                            <a href="#" class="more hover link-orange">Подробнее</a>
+                        </div>
+                        <!--/.card-body -->
+                    </div>
+                    <!--/.card -->
+                </div>
+                <!--/column -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="card shadow-lg">
+                        <div class="card-body">
+                            <img src={% static "img/icons/gift.svg"%} class="svg-inject icon-svg icon-svg-md text-blue mb-3"
+                                 alt=""/>
+
+                            <h4>Утилизация электронного оборудования</h4>
+                            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta
+                                gravida at eget metus cras justo.</p>
+                            <a href="#" class="more hover link-blue">Подробнее</a>
+                        </div>
+                        <!--/.card-body -->
+                    </div>
+                    <!--/.card -->
+                </div>
+                <!--/column -->
+            </div>
+            <!--/.row -->
+
+            <!--/.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <section class="wrapper bg-light wrapper-border">
+			<div class="container py-14 py-md-16">
+				<div class="row gx-lg-8 gx-xl-12 gy-10">
+					<div class="col-lg-6">
+						<figure><img class="w-auto" src={% static '1.jpg' %} alt=""></figure>
+					</div>
+					<!--/column -->
+					<div class="col-lg-6">
+						<h2 class="display-4 mb-3">Частые вопросы</h2>
+						<p class="lead fs-lg mb-6 pe-xxl-10">If you don't see an <span class="underline">answer to your question</span>, you can send us an email from our contact form.</p>
+						<div class="accordion accordion-wrapper" id="accordionExample-2">
+							<div class="card plain accordion-item">
+								<div class="card-header" id="headingOne-2">
+									<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne-2" aria-expanded="false" aria-controls="collapseOne-2"> Can I cancel my subscription? </button>
+								</div>
+								<!--/.card-header -->
+								<div id="collapseOne-2" class="accordion-collapse collapse" aria-labelledby="headingOne-2" data-bs-parent="#accordionExample-2" style="">
+									<div class="card-body">
+										<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel.</p>
+									</div>
+									<!--/.card-body -->
+								</div>
+								<!--/.accordion-collapse -->
+							</div>
+							<!--/.accordion-item -->
+							<div class="card plain accordion-item">
+								<div class="card-header" id="headingTwo-2">
+									<button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo-2" aria-expanded="false" aria-controls="collapseTwo-2"> Which payment methods do you accept? </button>
+								</div>
+								<!--/.card-header -->
+								<div id="collapseTwo-2" class="accordion-collapse collapse" aria-labelledby="headingTwo-2" data-bs-parent="#accordionExample-2" style="">
+									<div class="card-body">
+										<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel.</p>
+									</div>
+									<!--/.card-body -->
+								</div>
+								<!--/.accordion-collapse -->
+							</div>
+							<!--/.accordion-item -->
+							<div class="card plain accordion-item">
+								<div class="card-header" id="headingThree-2">
+									<button class="" data-bs-toggle="collapse" data-bs-target="#collapseThree-2" aria-expanded="true" aria-controls="collapseThree-2"> How can I manage my Account? </button>
+								</div>
+								<!--/.card-header -->
+								<div id="collapseThree-2" class="accordion-collapse collapse show" aria-labelledby="headingThree-2" data-bs-parent="#accordionExample-2" style="">
+									<div class="card-body">
+										<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel.</p>
+									</div>
+									<!--/.card-body -->
+								</div>
+								<!--/.accordion-collapse -->
+							</div>
+							<!--/.accordion-item -->
+						</div>
+						<!--/.accordion -->
+					</div>
+					<!--/column -->
+				</div>
+				<!--/.row -->
+			</div>
+			<!-- /.container -->
+		</section>
+</div>
+
+
+{% endblock %}

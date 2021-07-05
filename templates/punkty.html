@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="content-wrapper">
+    <header class="wrapper">
+        <nav class="navbar center-nav transparent navbar-expand-lg navbar-light">
+            <div class="container flex-lg-row flex-nowrap align-items-center">
+                <div class="navbar-brand"><a href={% url 'home' %}><img class='logoimg' src={% static "/img/logo.png" %} alt=""/></a></div>
+                <div class="navbar-collapse offcanvas-nav">
+                    <div class="offcanvas-header d-lg-none d-xl-none">
+                        <a href={% url 'home' %}><img class='logoimg'
+                                src={% static "/img/logo-light.png" %} srcset={% static "/img/logo-light@2x.png 2x" %}
+                                alt=""/></a>
+                        <button type="button" class="btn-close btn-close-white offcanvas-close offcanvas-nav-close"
+                                aria-label="Close"></button>
+                    </div>
+                    <ul class="navbar-nav">
+
+
+                        <li class="nav-item "><a class="nav-link" href={% url 'category' %}>Каталог</a>
+
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href={% url 'contact' %}>Контакты</a>
+
+                        </li>
+                        <li class="nav-item "><a class="nav-link" href={% url 'news' %}>Новости</a>
+
+                        </li>
+
+                       <li class="nav-item"><a class="nav-link" href={% url 'punkty' %}>Пункты приема</a>
+
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="navbar-other w-20 d-flex ms-auto">
+                    <h3> (44) 746-52-92</h3>
+                    <!-- /.navbar-nav -->
+                </div>
+                <!-- /.navbar-other -->
+            </div>
+            <!-- /.container -->
+        </nav>
+        <!-- /.navbar -->
+    </header>
+    <!-- /header -->
+    		<section class="wrapper bg-light">
+
+			<div class="container pt-8">
+<section id="tabs" class="wrapper pb-2">
+						<div class="row">
+							<div class="col-lg-6">
+                                                    <h1 class="pb-4">Пункты приема РесайклПро</h1>
+
+								<div id="accordion-1" class="accordion-wrapper">
+									{% for region in regions %}
+									<div class="card">
+										<div class="card-header" id="heading-{{region.id}}">
+											<button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapse-{{region.id}}" aria-expanded="false" aria-controls="collapse-{{region.id}}">{{ region.region_name }}</button>
+										</div>
+										<!-- /.card-header -->
+										<div id="collapse-{{region.id}}" class="collapse" aria-labelledby="heading-{{region.id}}" data-bs-target="#accordion-1">
+											<div class="card-body">
+												<p>{{ region.region_short_desc }}</p>
+                                                <div>{% for punkt in region.punkt_set.all %}
+<div>
+                                                   <img src="{{ punkt.punkt_image.url}}" width="100">
+                                                    {{ punkt.punkt_name }}
+<a href="#" class="btn btn-primary btn-sm rounded-pill me-1 mb-2 mb-md-0">Small Button</a>
+                                                    </div>
+                                                    {% endfor %}</div>
+											</div>
+											<!-- /.card-body -->
+										</div>
+										<!-- /.collapse -->
+									</div>
+									<!-- /.card -->
+{% endfor %}
+								</div>
+
+
+
+
+
+							</div>
+							<!--/column -->
+                        <div class="col-lg-6">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aee34905b75ecae79d8648305556c3802f77efa01900e4bbba72efc1daaed650d&amp;width=100%&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
+                        </div></div>
+						<!--/.row -->
+					</section>
+            </div>
+            </section>
+</div>
+{% endblock %}

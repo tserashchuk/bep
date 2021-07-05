@@ -38898,9 +38898,10 @@ footer.bg-dark.angled.lower-start:after, footer.bg-dark.angled.upper-start:befor
 
 @media (min-width: 1200px) {
     .calcForm {
-
+        border-radius: 10px;
         background: #0fab10;
-        padding-bottom: 20px
+        padding-bottom: 20px;
+
     }
 
     .calcItemGroup {
@@ -38923,4 +38924,38 @@ footer.bg-dark.angled.lower-start:after, footer.bg-dark.angled.upper-start:befor
     .formGlobal {
         padding-bottom: 60px;
     }
+}
+
+.logoimg { max-width: 190px;}
+
+.priceform {
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    flex-basis: 10%;
+    font-weight: 800;
+}
+.priceform:after{
+    content:' BYN'
+}
+
+
+.countform {
+    flex-basis:10%;
+}
+.countformlabel {
+     color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    flex-basis: 10%;
+    font-weight: 800;
+}
+.prodform {
+    flex-basis:30%;
+}
+.catform {
+    flex-basis:30%;
+}
+.summarycalc{
+    font-size: 16px;
 }
