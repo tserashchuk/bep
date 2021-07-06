@@ -48,3 +48,15 @@ class News(View):
     def get(self, request):
         articles = Article.objects.all()
         return render(request, 'news.html', {'articles':articles})
+
+class Bytov(View):
+    def get(self, request):
+        return render(request, 'priem.html')
+
+class Vyvoz(View):
+    def get(self, request):
+        return render(request, 'vyvoz.html')
+
+class Yuriki(View):
+    def get(self, request):
+        return render(request, 'yuriki.html')

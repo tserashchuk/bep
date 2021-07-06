@@ -28,6 +28,9 @@ urlpatterns = [
     path('s/', views.Skupka.as_view(), name='skupka'),
     path('pp/', views.Punkty.as_view(), name='punkty'),
     path('news/', views.News.as_view(), name='news'),
+    path('b/', views.Bytov.as_view(), name='priem'),
+    path('v/', views.Vyvoz.as_view(), name='vyvoz'),
+    path('y/', views.Yuriki.as_view(), name='yuriki'),
     path('editorjs/', include('django_editorjs_fields.urls')),
     path('api-auth/', include(rest.router.urls))
 ]

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
     <div class="content-wrapper">
         <header class="wrapper ">
             <nav class="navbar center-nav transparent navbar-expand-lg navbar-light">
@@ -46,6 +47,7 @@
             </nav>
             <!-- /.navbar -->
         </header>
+
         <section class="wrapper bg-light">
             <div class="container pt-8 pt-md-14">
                 <div class="row gx-lg-0 gx-xl-8 gy-10 gy-md-13 gy-lg-0 mb-7 mb-md-10 mb-lg-16 align-items-center">
@@ -55,25 +57,159 @@
                              style="top: -1.7rem; left: -1.5rem;"></div>
                         <div class="shape rounded bg-soft-primary rellax d-md-block" data-rellax-speed="0"
                              style="bottom: -1.8rem; right: -0.8rem; width: 85%; height: 90%;"></div>
-                        <figure class="rounded"><img src={% static '2.jpg' %}  alt=""/></figure>
+                        <figure class="rounded"><img src="{% static '1.jpg' %}" alt=""/></figure>
                     </div>
                     <!--/column -->
                     <div class="col-lg-5 mt-lg-n10 text-center text-lg-start" data-group="page-title">
-                        <h1 class="display-1 mb-5">Скупка радиодеталей</h1>
-                        <p class="lead fs-25 lh-sm mb-7 px-md-10 px-lg-0">Наша компания специализируется на скупке и
-                            переработке радиодеталей в Минске и других регионах Республики Беларусь.</p>
+                        <h1 class="display-1 mb-5">Сдать старую технику за деньги</h1>
+                        <p class="lead fs-25 lh-sm mb-7 px-md-10 px-lg-0">Отдавая электронные отходы в нашу компнаию, Вы
+                            бережете природу</p>
+                        <ul>
+                            <li>0,25 коп за килограмм</li>
+                            <li>принимаем технику в любом состоянии и количестве</li>
+                            <li>утилизируем технику, бережем экологию</li>
+                            <li>не хотите тащить технику, сам приедем и отберем</li>
+                        </ul>
                         <div class="d-flex justify-content-center justify-content-lg-start"
                              data-group="page-title-buttons">
                             <span><a href="#" class="btn btn-lg btn-primary rounded-pill me-2">Прайс-лист</a></span>
                             <span><a href="#"
-                                     class="btn btn-lg btn-outline-primary rounded-pill">Задать вопрос</a></span>
+                                     class="btn btn-lg btn-outline-primary rounded-pill">Пункты приема</a></span>
                         </div>
                     </div>
                     <!--/column -->
                 </div>
             </div>
         </section>
+        <section class="wrapper bg-light">
+            <div class="container pb-12">
+                <div class="row align-items-center mb-7">
+                    <div class="col-md-8 col-lg-8 col-xl-7 col-xxl-6 pe-lg-17">
+                        <h2 class="display-4 mb-3">Что мы вам заплатим?</h2>
+                        <p class="lead fs-lg">Ко-пейки</p>
+                    </div>
+                    <!--/column -->
+                </div>
+                <!--/.row -->
+                <div class="carousel owl-carousel grid-view owl-loaded owl-drag" data-margin="30" data-dots="true"
+                     data-autoplay="false" data-autoplay-timeout="5000"
+                             data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "992":{"items": "2"}, "1200":{"items": "3"}}'>
 
+
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage"
+                             style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2640px;">
+                            <div class="owl-item active" style="width: 410px; margin-right: 30px;">
+                                <div class="item">
+                                    <figure class="rounded mb-6"><a href="single-project.html"> <img
+                                            src={% static "/img/photos/pd1.jpg" %} alt=""></a></figure>
+                                    <div class="project-details d-flex justify-content-center flex-column">
+                                        <div class="post-header">
+                                            <div class="post-category text-line mb-3 text-yellow">(0,25р за кг) в
+                                                среднем ≈ 13,5р.
+                                            </div>
+                                            <h2 class="post-title h3">Холодильник</h2>
+                                        </div>
+                                        <!-- /.post-header -->
+                                    </div>
+                                    <!-- /.project-details -->
+                                </div>
+                            </div>
+                            <div class="owl-item active" style="width: 410px; margin-right: 30px;">
+                                <div class="item">
+                                    <figure class="rounded mb-6"><a href="single-project2.html"> <img
+                                            src={% static "/img/photos/pd2.jpg"%} alt=""></a></figure>
+                                    <div class="project-details d-flex justify-content-center flex-column">
+                                        <div class="post-header">
+                                            <div class="post-category text-line mb-3 text-red">(0,25р за кг) в среднем ≈
+                                                13,5р.
+                                            </div>
+                                            <h2 class="post-title h3">Телевизор</h2>
+                                        </div>
+                                        <!-- /.post-header -->
+                                    </div>
+                                    <!-- /.project-details -->
+                                </div>
+                            </div>
+                            <div class="owl-item active" style="width: 410px; margin-right: 30px;">
+                                <div class="item">
+                                    <figure class="rounded mb-6"><a href="single-project3.html"> <img
+                                            src={% static "/img/photos/pd3.jpg" %} alt=""></a></figure>
+                                    <div class="project-details d-flex justify-content-center flex-column">
+                                        <div class="post-header">
+                                            <div class="post-category text-line mb-3 text-orange">(0,25р за кг) в
+                                                среднем ≈ 13,5р.
+                                            </div>
+                                            <h2 class="post-title h3">Плиту</h2>
+                                        </div>
+                                        <!-- /.post-header -->
+                                    </div>
+                                    <!-- /.project-details -->
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 410px; margin-right: 30px;">
+                                <div class="item">
+                                    <figure class="rounded mb-6"><a href="single-project2.html"> <img
+                                            src={% static "/img/photos/pd4.jpg"%} alt=""></a></figure>
+                                    <div class="project-details d-flex justify-content-center flex-column">
+                                        <div class="post-header">
+                                            <div class="post-category text-line mb-3 text-purple">(0,25р за кг) в
+                                                среднем ≈ 13,5р.
+                                            </div>
+                                            <h2 class="post-title h3">Inceptos Euismod Egestas</h2>
+                                        </div>
+                                        <!-- /.post-header -->
+                                    </div>
+                                    <!-- /.project-details -->
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 410px; margin-right: 30px;">
+                                <div class="item">
+                                    <figure class="rounded mb-6"><a href="single-project3.html"> <img
+                                            src={% static "/img/photos/pd5.jpg"%} alt=""></a></figure>
+                                    <div class="project-details d-flex justify-content-center flex-column">
+                                        <div class="post-header">
+                                            <div class="post-category text-line mb-3 text-leaf">Print</div>
+                                            <h2 class="post-title h3">Ipsum Mollis Vulputate</h2>
+                                        </div>
+                                        <!-- /.post-header -->
+                                    </div>
+                                    <!-- /.project-details -->
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 410px; margin-right: 30px;">
+                                <div class="item">
+                                    <figure class="rounded mb-6"><a href="single-project.html"> <img
+                                            src={% static "/img/photos/pd6.jpg"%} alt=""></a></figure>
+                                    <div class="project-details d-flex justify-content-center flex-column">
+                                        <div class="post-header">
+                                            <div class="post-category text-line mb-3 text-aqua">Workshop</div>
+                                            <h2 class="post-title h3">Porta Ornare Cras</h2>
+                                        </div>
+                                        <!-- /.post-header -->
+                                    </div>
+                                    <!-- /.project-details -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="owl-nav disabled">
+                        <button type="button" role="presentation" class="owl-prev"><i class="uil-arrow-left"></i>
+                        </button>
+                        <button type="button" role="presentation" class="owl-next"><i class="uil-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="owl-dots">
+                        <button role="button" class="owl-dot active"><span></span></button>
+                        <button role="button" class="owl-dot"><span></span></button>
+                        <button role="button" class="owl-dot"><span></span></button>
+                        <button role="button" class="owl-dot"><span></span></button>
+                    </div>
+                </div>
+                <!-- /.owl-carousel -->
+            </div>
+            <!-- /.container -->
+        </section>
         <section class="wrapper bg-light">
             <div class="container pb-16">
                 <h2 class="display-4 mb-3">Как сдать радиодетали?</h2>
@@ -109,63 +245,11 @@
         </section>
 
         <section class="wrapper bg-light">
-            <div class="container pb-16">
-                <div class="row align-items-center mb-7">
-                    <div class="col-md-8 col-lg-8 col-xl-7 col-xxl-6 pe-lg-17">
-                        <h2 class="display-4 mb-3">Каталог</h2>
-                    </div>
-                    <!--/column -->
-                </div>
-                <!--/.row -->
-                <section class="wrapper bg-light">
-                    <div class="container">
-                        <div class="grid grid-view projects-masonry">
-                            <div class="isotope-filter filter mb-10">
-                                <p>Фильтр:</p>
-                                <ul>
-                                    <li><a class="filter-item active" data-filter="*">Все</a></li>
-                                    <li><a class="filter-item" data-filter=".concept">Конденсаторы</a></li>
-                                    <li><a class="filter-item" data-filter=".product">Транзисторы</a></li>
-                                    <li><a class="filter-item" data-filter=".workshop">Высоко содержащая группа</a></li>
-                                    <li><a class="filter-item" data-filter=".still-life">Дешевенькое</a></li>
-                                </ul>
-                            </div>
-                            <div class="row gx-md-8 gy-10 gy-md-13 isotope">
-
-                                {% for category in categorys %}
-                                    <div class="project item col-md-6 col-xl-4 product">
-                                        <div class="post-header">
-                                            <h2 class="post-title h3">{{ category.cat_name }}</h2>
-                                        </div>
-                                        <figure class="lift rounded mb-6"><a href="single-project.html"> <img
-                                                src={{ category.cat_image.url }} alt=""/></a></figure>
-                                        <div class="project-details d-flex justify-content-center flex-column">
-
-                                            <!-- /.post-header -->
-                                        </div>
-                                        <!-- /.project-details -->
-                                    </div>
-                                {% endfor %}
-
-                            </div>
-                            <!-- /.row -->
-                        </div>
-                        <!-- /.grid -->
-                    </div>
-                    <!-- /.container -->
-                </section>
-                <!-- /.owl-carousel -->
-            </div>
-            <!-- /.container -->
-        </section>
-
-
-        <section class="wrapper bg-light">
-            <div class="container pb-16">
+            <div class="container">
                 <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
                     <div class="col-lg-4">
-                        <h2 class="fs-15 text-uppercase text-line text-primary text-center mb-3">Консультация</h2>
-                        <h3 class="display-5 mb-5">Хотите получить консультацию?</h3>
+                        <h2 class="fs-15 text-uppercase text-line text-primary text-center mb-3">Пункты приема</h2>
+                        <h3 class="display-5 mb-5">Куда можно принести технику?</h3>
                         <p>Вы можете поулчить ответы на все вопросы от наших специалистов.</p>
                         <a href="#" class="btn btn-primary rounded-pill mt-3">Заказать звонок</a>
                     </div>
@@ -175,10 +259,10 @@
                              data-autoplay="false" data-autoplay-timeout="5000"
                              data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "992":{"items": "2"}, "1200":{"items": "3"}}'>
                             <div class="item">
-                                <img class="rounded-circle w-20 mx-auto mb-4"
-                                     src={% static "/img/avatars/t1.jpg" %} alt=""/>
-                                <h4 class="mb-1">Сергей Некало</h4>
-                                <div class="meta mb-2">специалист-приемщик</div>
+                                <img class="rounded-circle w-20 mx-auto mb-4" src="src/img/avatars/t1.jpg"
+                                     srcset="src/img/avatars/t1@2x.jpg 2x" alt=""/>
+                                <h4 class="mb-1">г. Гомель, Гагарина 57</h4>
+                                <div class="meta mb-2">Пн-Пт: 10-19, Сб-Вс: выходной</div>
                                 <p class="mb-2">г. Гродно, ул. Гаражная 6</p>
                                 <p class="mb-2">Телефон (а снизу месседжеры)</p>
                                 <nav class="nav social justify-content-center text-center mb-0">
@@ -190,9 +274,9 @@
                             </div>
                             <!-- /.item -->
                             <div class="item">
-                                <img class="rounded-circle w-20 mx-auto mb-4"
-                                     src={% static "/img/avatars/t2.jpg" %} alt=""/>
-                                <h4 class="mb-1">Евгений Шершнев</h4>
+                                <img class="rounded-circle w-20 mx-auto mb-4" src="src/img/avatars/t2.jpg"
+                                     srcset="src/img/avatars/t2@2x.jpg 2x" alt=""/>
+                                <h4 class="mb-1">г. Гомель, Гагарина 57</h4>
                                 <div class="meta mb-2">специалист-приемщик</div>
                                 <p class="mb-2">г. Гомель, ул. Гагарина 57</p>
                                 <p class="mb-2">Телефон (а снизу месседжеры)</p>
@@ -205,9 +289,9 @@
                             </div>
                             <!-- /.item -->
                             <div class="item">
-                                <img class="rounded-circle w-20 mx-auto mb-4"
-                                     src={% static "/img/avatars/t3.jpg" %} alt=""/>
-                                <h4 class="mb-1">Евгений Кучинский</h4>
+                                <img class="rounded-circle w-20 mx-auto mb-4" src="src/img/avatars/t3.jpg"
+                                     srcset="src/img/avatars/t3@2x.jpg 2x" alt=""/>
+                                <h4 class="mb-1">г. Гомель, Гагарина 57</h4>
                                 <div class="meta mb-2">специалист-приемщик</div>
                                 <p class="mb-2">г. Могилев, пер. Березовский 5</p>
                                 <p class="mb-2">Телефон (а снизу месседжеры)</p>
@@ -222,7 +306,7 @@
                             <div class="item">
                                 <img class="rounded-circle w-20 mx-auto mb-4" src="src/img/avatars/t4.jpg"
                                      srcset="src/img/avatars/t4@2x.jpg 2x" alt=""/>
-                                <h4 class="mb-1">Jackie Sanders</h4>
+                                <h4 class="mb-1">г. Гомель, Гагарина 57</h4>
                                 <div class="meta mb-2">Investment Planner</div>
                                 <p class="mb-2">Nullam risus eget urna mollis ornare vel eu leo.</p>
                                 <nav class="nav social justify-content-center text-center mb-0">
@@ -258,8 +342,52 @@
         </section>
 
 
-        <section class="wrapper bg-light wrapper-border">
+        <section class="wrapper bg-light">
             <div class="container py-14 py-md-16">
+                <div class="card shadow-lg">
+                    <div class="row gx-0">
+                        <div class="col-lg-6 image-wrapper bg-image bg-cover rounded-top rounded-lg-start d-none d-md-block"
+                             data-image-src="{% static '/img/photos/tm1.jpg' %}"
+                             style="background-image: url({% static '/img/photos/tm1.jpg' %});">
+                        </div>
+                        <!--/column -->
+                        <div class="col-lg-6">
+                            <div class="p-10 p-md-11 p-lg-13">
+                                <h2 class="display-4 mb-3">Не хотите нести технику?</h2>
+                                <p>Несите сразу бабло..а мы можем вывезти вашу технику БЕСПЛАТНО</p>
+                                <div class="form-label-group mb-4">
+                                    <input id="textInputExample" type="text" class="form-control"
+                                           placeholder="Ваше имя">
+                                    <label for="textInputExample">Text Input</label>
+                                </div>
+                                <div class="form-label-group mb-4">
+                                    <input id="textInputExample" type="text" class="form-control" placeholder="Телефон">
+                                    <label for="textInputExample">Text Input</label>
+                                </div>
+                                <div class="form-label-group mb-4">
+                                    <input id="textInputExample" type="text" class="form-control" placeholder="Адрес">
+                                    <label for="textInputExample">Text Input</label>
+                                </div>
+                                <div class="form-label-group mb-4">
+                                    <textarea id="textareaExample" class="form-control" rows="5"
+                                              placeholder="Укажите удобное время вывоза и что хотите вывезти"></textarea>
+                                    <label for="textareaExample">Textarea</label>
+                                </div>
+                                <a href="#" class="btn btn-primary rounded-pill me-1 mb-2 mb-md-0">Solid</a>
+                            </div>
+                            <!--/div -->
+                        </div>
+                        <!--/column -->
+                    </div>
+                    <!--/.row -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.container -->
+        </section>
+
+        <section class="wrapper bg-light wrapper-border">
+            <div class="container pb-16">
                 <div class="card bg-soft-primary rounded-4">
                     <div class="card-body p-md-10 p-xl-11">
                         <div class="row gx-lg-8 gx-xl-12 gy-10">
@@ -360,9 +488,7 @@
                 <!--/.card -->
             </div>
             <!-- /.container -->
-
         </section>
+
     </div>
 {% endblock %}
-
-
