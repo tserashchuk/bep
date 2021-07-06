@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 from django_editorjs_fields import EditorJsJSONField, EditorJsTextField
 
@@ -9,6 +11,7 @@ PURCACHE_CHOICES = (
 
 class Category(models.Model):
     cat_name = models.CharField('Название категории продукта', max_length=200)
+    cat_slug = models.CharField('URL', max_length=200, default='slug' + str(datetime.datetime.now()))
     cat_title = models.CharField('Заголовок title', max_length=200)
     cat_metadesc = models.CharField('Описание description', max_length=300)
     cat_short_desc = models.TextField('Короткое описание', blank=True)

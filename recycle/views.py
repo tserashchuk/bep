@@ -26,6 +26,11 @@ class CategoryView(View):
 
         return render(request, 'categorys.html', {'categorys': categorys})
 
+class Products(View):
+    def get(self, request, cat_slug):
+        category = Category.objects.get(cat_slug=cat_slug)
+        return render(request, 'products.html', {'category': category})
+
 
 class Contact(View):
     def get(self, request):
