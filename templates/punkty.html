@@ -64,11 +64,12 @@
 										<div id="collapse-{{region.id}}" class="collapse" aria-labelledby="heading-{{region.id}}" data-bs-target="#accordion-1">
 											<div class="card-body">
 												<p>{{ region.region_short_desc }}</p>
+                                            <a  class="btn btn-primary btn-sm rounded-pill me-1 mb-2 mb-md-0" href={% url 'region' region_slug=region.region_slug %}>Подробнее о регионе</a>
+
                                                 <div>{% for punkt in region.punkt_set.all %}
 <div>
                                                    <img src="{{ punkt.punkt_image.url}}" width="100">
                                                     {{ punkt.punkt_name }}
-<a href="#" class="btn btn-primary btn-sm rounded-pill me-1 mb-2 mb-md-0">Small Button</a>
                                                     </div>
                                                     {% endfor %}</div>
 											</div>

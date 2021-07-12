@@ -39,9 +39,11 @@ class Product(models.Model):
 class Article(models.Model):
     article_name = models.CharField('Заголовок H1', max_length=200)
     article_title = models.CharField('Заголовок title', max_length=200)
+    article_slug = models.CharField('URL', max_length=200, default='article' + str(datetime.datetime.now()))
     article_metadesc = models.CharField('Описание description', max_length=300)
     article_short_desc = models.TextField('Короткое описание', blank=True)
     article_image = models.ImageField('Изображение статьи')
+    isStock = models.BooleanField(default=False)
     body_editorjs = EditorJsJSONField()
 
     def __str__(self):
@@ -50,6 +52,7 @@ class Article(models.Model):
 
 class Region(models.Model):
     region_name = models.CharField('Название региона', max_length=200)
+    region_slug = models.CharField('URL', max_length=200, default='region' + str(datetime.datetime.now()))
     region_title = models.CharField('Заголовок title', max_length=200)
     region_metadesc = models.CharField('Описание description', max_length=300)
     region_short_desc = models.TextField('Короткое описание', blank=True)
@@ -64,6 +67,7 @@ class Punkt(models.Model):
     punkt_title = models.CharField('Заголовок title', max_length=200)
     punkt_metadesc = models.CharField('Описание description', max_length=300)
     punkt_short_desc = models.TextField('Короткое описание', blank=True)
+    punkt_geo = models.CharField('Описание description', max_length=300, default="55.659173,37.762848")
     punkt_image = models.ImageField('Изображение пункта')
     body_editorjs = EditorJsJSONField()
     region = models.ForeignKey(Region, on_delete=models.CASCADE)

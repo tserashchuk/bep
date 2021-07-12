@@ -9367,7 +9367,7 @@ textarea.form-control-lg {
 }
 
 .lh-xs {
-    line-height: 1.05 !important;
+    line-height: 1.15 !important;
 }
 
 .lh-sm {
@@ -38899,7 +38899,7 @@ footer.bg-dark.angled.lower-start:after, footer.bg-dark.angled.upper-start:befor
 @media (min-width: 1200px) {
     .calcForm {
         border-radius: 10px;
-        background: #0fab10;
+        background: #00bd00;
         padding-bottom: 20px;
 
     }
@@ -38919,6 +38919,96 @@ footer.bg-dark.angled.lower-start:after, footer.bg-dark.angled.upper-start:befor
         padding-right: 50px;
         padding-top: 20px;
 
+    }
+
+    .formGlobal {
+        padding-bottom: 60px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .calcForm {
+        border-radius: 10px;
+        background: #00bd00;
+        padding-bottom: 20px;
+
+    }
+
+    .calcItemGroup {
+        display: flex;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 50px;
+    }
+
+    .calcItemSec {
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 20px;
+
+    }
+
+    .formGlobal {
+        padding-bottom: 60px;
+    }
+}
+
+
+@media (min-width: 900px) {
+    .calcForm {
+        border-radius: 10px;
+        background: #00bd00;
+        padding-bottom: 20px;
+
+    }
+
+    .calcItemGroup {
+
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 50px;
+    }
+
+    .calcItemSec {
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 20px;
+
+    }
+
+    .formGlobal {
+        padding-bottom: 60px;
+    }
+}
+
+@media (min-width: 300px) {
+    .calcForm {
+        border-radius: 10px;
+        background: #00bd00;
+        padding-bottom: 20px;
+
+    }
+
+    .calcItemGroup {
+
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 50px;
+    }
+
+    .calcItemSec {
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 20px;
     }
 
     .formGlobal {

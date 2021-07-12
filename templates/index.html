@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
+
+    {% block meta %}
+    <title>РесайклПро - переработка электронного оборудования</title>
+    {% endblock %}
+
+
+
 {% block content %}
 
 <div class="content-wrapper">
@@ -24,7 +31,9 @@
                         <li class="nav-item"><a class="nav-link" href={% url 'contact' %}>Контакты</a>
 
                         </li>
-                        <li class="nav-item "><a class="nav-link" href={% url 'news' %}>Новости</a>
+                        <li class="nav-item "><a class="nav-link" href={% url 'news' %}>Новости {% if stock %}
+    <span class="badge bg-red rounded-pill">Акция</span>
+                            {% endif %}</a>
 
                         </li>
 
@@ -50,11 +59,11 @@
         <div class="container pt-10 pt-md-14 pb-14 pb-md-0">
             <div class="row gx-md-8 gx-lg-12 gy-3 gy-lg-0 mb-13">
                 <div class="col-lg-6">
-                    <h1 class="display-1 fs-66 lh-xs mb-0">Мы бесплатно забираем бытовую технику и скупаем
+                    <h1 class="display-1 fs-66 lh-xs mb-0">Мы бесплатно вывозим бытовую технику и скупаем
                         радиодетали</h1>
                 </div>
                 <!-- /column -->
-                <div class="col-lg-6">
+                <div class="col-lg-6 fw-bold">
                     <br class="lead fs-25 my-3">Если вы хотите сдать бытовую технику - закажите обратный звонок или
                     свяжитесь с нами по телефону:</br>+375(44) 746-52-92</p>
                     <a href="#" class="btn btn-violet rounded-pill mb-2 me-1">Заказать звонок</a>
@@ -95,12 +104,10 @@
                 <div class="col-md-6 col-xl-3">
                     <div class="card shadow-lg">
                         <div class="card-body">
-                            <img src={% static "img/icons/browser.svg" %}
+                            <img src={% static "img/icons/user.svg" %}
                                  class="svg-inject icon-svg icon-svg-md text-yellow mb-3" alt=""/>
-
                             <h4>Скупка радиодеталей у физических<br/>лиц</h4>
-                            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta
-                                gravida at eget metus cras justo.</p>
+                            <p class="mb-2">Более 10-ти приемных пунктов по всей Беларуси. Выездные заготовки в любом регионе</p>
                             <a href="{% url 'skupka' %}" class="more hover link-yellow">Прайс-лист</a>
                         </div>
                         <!--/.card-body -->
@@ -111,12 +118,10 @@
                 <div class="col-md-6 col-xl-3">
                     <div class="card shadow-lg">
                         <div class="card-body">
-                            <img src={% static "img/icons/chat-2.svg"%} class="svg-inject icon-svg icon-svg-md text-green mb-3"
+                            <img src={% static "img/icons/briefcase-2.svg"%} class="svg-inject icon-svg icon-svg-md text-green mb-3"
                                  alt=""/>
-
                             <h4>Определение технического состояния</h4>
-                            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta
-                                gravida at eget metus cras justo.</p>
+                            <p class="mb-2">Мы предлагаем помощь по оценке и документальному сопровождению списания вычислительной техники</p>
                             <a href="#" class="more hover link-green">Подробнее</a>
                         </div>
                         <!--/.card-body -->
@@ -127,12 +132,10 @@
                 <div class="col-md-6 col-xl-3">
                     <div class="card shadow-lg">
                         <div class="card-body">
-                            <img src={% static "img/icons/id-card.svg"%} class="svg-inject icon-svg icon-svg-md text-orange mb-3" alt=""/>
-
+                            <img src={% static "img/icons/briefcase-2.svg"%} class="svg-inject icon-svg icon-svg-md text-green mb-3" alt=""/>
                             <h4>Переработка лома и отходов драг металлов</h4>
-                            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta
-                                gravida at eget metus cras justo.</p>
-                            <a href="#" class="more hover link-orange">Подробнее</a>
+                            <p class="mb-2">Электронный лом попадет будет утилизирован в соответствии со всеми требованиями.</p>
+                            <a href="#" class="more hover link-green">Подробнее</a>
                         </div>
                         <!--/.card-body -->
                     </div>
@@ -142,13 +145,10 @@
                 <div class="col-md-6 col-xl-3">
                     <div class="card shadow-lg">
                         <div class="card-body">
-                            <img src={% static "img/icons/gift.svg"%} class="svg-inject icon-svg icon-svg-md text-blue mb-3"
-                                 alt=""/>
-
+                            <img src={% static "img/icons/briefcase-2.svg"%} class="svg-inject icon-svg icon-svg-md text-green mb-3" alt=""/>
                             <h4>Утилизация электронного оборудования</h4>
-                            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta
-                                gravida at eget metus cras justo.</p>
-                            <a href="#" class="more hover link-blue">Подробнее</a>
+                            <p class="mb-2">Комплексные услуги по переработке электронного оборудования по всей Беларуси</p>
+                            <a href="#" class="more hover link-green">Подробнее</a>
                         </div>
                         <!--/.card-body -->
                     </div>
@@ -171,16 +171,16 @@
 					<!--/column -->
 					<div class="col-lg-6">
 						<h2 class="display-4 mb-3">Частые вопросы</h2>
-						<p class="lead fs-lg mb-6 pe-xxl-10">If you don't see an <span class="underline">answer to your question</span>, you can send us an email from our contact form.</p>
+						<p class="lead fs-lg mb-6 pe-xxl-10">Если вы не нашли ответ <span class="underline">свяжитесь с нами</span>, мы с радостью ответим на них.</p>
 						<div class="accordion accordion-wrapper" id="accordionExample-2">
 							<div class="card plain accordion-item">
 								<div class="card-header" id="headingOne-2">
-									<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne-2" aria-expanded="false" aria-controls="collapseOne-2"> Can I cancel my subscription? </button>
+									<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne-2" aria-expanded="false" aria-controls="collapseOne-2"> Вы работаете официально? </button>
 								</div>
 								<!--/.card-header -->
 								<div id="collapseOne-2" class="accordion-collapse collapse" aria-labelledby="headingOne-2" data-bs-parent="#accordionExample-2" style="">
 									<div class="card-body">
-										<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel.</p>
+										<p>ООО «РесайклПро» имеет  специальное разрешение (лицензию) на право осуществления деятельности, связанной с драгоценными металлами и драгоценными камнями № 02200/17-01391, выданной Министерством финансов Республики Беларусь на основании решения от 09 сентября 2016 г.</p>
 									</div>
 									<!--/.card-body -->
 								</div>

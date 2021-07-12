@@ -14,16 +14,19 @@ class Home(View):
             products = cat.product_set.all()
             data.append({'categoryName': cat.cat_name, 'categoryID': cat.id})
         data = json.dumps(list(data))
-        return render(request, 'index.html', {'data': data})
+        return render(request, 'index.html')
 
     def post(self, catID):
         return '123'
 
+class ArticleView(View):
+    def get(self, request,article_slug):
+        article = Article.objects.get(article_slug=article_slug)
+        return render(request, 'article.html', {'article':article})
 
 class CategoryView(View):
     def get(self, request):
         categorys = Category.objects.all()
-
         return render(request, 'categorys.html', {'categorys': categorys})
 
 class Products(View):
@@ -51,8 +54,12 @@ class Punkty(View):
 
 class News(View):
     def get(self, request):
+        stock = False
         articles = Article.objects.all()
-        return render(request, 'news.html', {'articles':articles})
+        for article in articles:
+            if article.isStock == True:
+                stock = True
+        return render(request, 'news.html', {'articles':articles, 'stock':stock})
 
 class Bytov(View):
     def get(self, request):
@@ -65,3 +72,16 @@ class Vyvoz(View):
 class Yuriki(View):
     def get(self, request):
         return render(request, 'yuriki.html')
+
+class Bezvozmezdno(View):
+    def get(self, request):
+        return render(request, 'bezvozmezdno.html')
+
+class RegionView(View):
+    def get(self, request, region_slug):
+        region = Region.objects.get(region_slug=region_slug)
+        return render(request, 'regionpage.html', {'region':region})
+
+class Spisanie(View):
+    def get(self, request):
+        return render(request, 'spisanie.html')

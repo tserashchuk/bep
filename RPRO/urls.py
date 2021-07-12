@@ -26,12 +26,16 @@ urlpatterns = [
     path('p/', views.CategoryView.as_view(), name='category'),
     path('p/<str:cat_slug>', views.Products.as_view(), name='products'),
     path('c/', views.Contact.as_view(), name='contact'),
-    path('s/', views.Products.as_view(), name='skupka'),
+    path('s/', views.Skupka.as_view(), name='skupka'),
     path('pp/', views.Punkty.as_view(), name='punkty'),
     path('news/', views.News.as_view(), name='news'),
+    path('news/<str:article_slug>', views.ArticleView.as_view(), name='article'),
     path('b/', views.Bytov.as_view(), name='priem'),
     path('v/', views.Vyvoz.as_view(), name='vyvoz'),
     path('y/', views.Yuriki.as_view(), name='yuriki'),
+    path('bezvozm/', views.Bezvozmezdno.as_view(), name='bezvozm'),
+    path('spisanie/', views.Spisanie.as_view(), name='spisanie'),
+    path('region/<str:region_slug>', views.RegionView.as_view(), name='region'),
     path('editorjs/', include('django_editorjs_fields.urls')),
     path('api-auth/', include(rest.router.urls))
 ]
