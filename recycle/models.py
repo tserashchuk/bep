@@ -1,5 +1,4 @@
 import datetime
-
 from django.db import models
 from django_editorjs_fields import EditorJsJSONField, EditorJsTextField
 
@@ -31,7 +30,6 @@ class Product(models.Model):
     product_desc = models.TextField('Полное описание', blank=True)
     product_image = models.ImageField('Изображение продукта')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-
 
     def __str__(self):
         return self.product_name
