@@ -31,6 +31,7 @@ class Product(models.Model):
     product_image = models.ImageField('Изображение продукта')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
+
     def __str__(self):
         return self.product_name
 

@@ -44,7 +44,8 @@ class Contact(View):
 class Skupka(View):
     def get(self, request):
         categorys = Category.objects.all()
-        return render(request, 'skupka.html', {'categorys': categorys})
+        regions = Region.objects.all()
+        return render(request, 'skupka.html', {'categorys': categorys,'regions':regions})
 
 
 class Punkty(View):

@@ -2,50 +2,51 @@
 {% load static %}
 {% block content %}
     <div class="content-wrapper">
-        <header class="wrapper ">
-            <nav class="navbar center-nav transparent navbar-expand-lg navbar-light">
-                <div class="container flex-lg-row flex-nowrap align-items-center">
-                    <div class="navbar-brand"><a href={% url 'home' %}><img class='logoimg'
-                                                                            src={% static "/img/logo.png" %} alt=""/></a>
+      <header class="wrapper">
+        <nav class="navbar center-nav transparent navbar-expand-lg navbar-light">
+            <div class="container flex-lg-row flex-nowrap align-items-center">
+                <div class="navbar-brand"><a href={% url 'home' %}><img class='logoimg' src={% static "/img/logo.png" %} alt=""/></a></div>
+                <div class="navbar-collapse offcanvas-nav">
+                    <div class="offcanvas-header d-lg-none d-xl-none">
+                        <a href={% url 'home' %}><img class='logoimg'
+                                src={% static "/img/logo-light.png" %} srcset={% static "/img/logo-light@2x.png 2x" %}
+                                alt=""/></a>
+                        <button type="button" class="btn-close btn-close-white offcanvas-close offcanvas-nav-close"
+                                aria-label="Close"></button>
                     </div>
-                    <div class="navbar-collapse offcanvas-nav">
-                        <div class="offcanvas-header d-lg-none d-xl-none">
-                            <a href={% url 'home' %}><img class='logoimg'
-                                                          src={% static "/img/logo-light.png" %} srcset={% static "/img/logo-light@2x.png 2x" %}
-                                                          alt=""/></a>
-                            <button type="button" class="btn-close btn-close-white offcanvas-close offcanvas-nav-close"
-                                    aria-label="Close"></button>
-                        </div>
-                        <ul class="navbar-nav">
+                    <ul class="navbar-nav">
 
 
-                            <li class="nav-item "><a class="nav-link" href={% url 'category' %}>Каталог</a>
+                        <li class="nav-item "><a class="nav-link" href={% url 'category' %}>Каталог</a>
 
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href={% url 'contact' %}>Контакты</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href={% url 'contact' %}>Контакты</a>
 
-                            </li>
-                            <li class="nav-item "><a class="nav-link" href={% url 'news' %}>Новости</a>
+                        </li>
+                        <li class="nav-item "><a class="nav-link" href={% url 'news' %}>Новости {% if stock %}
+    <span class="badge bg-red rounded-pill">Акция</span>
+                            {% endif %}</a>
 
-                            </li>
+                        </li>
 
-                            <li class="nav-item"><a class="nav-link" href={% url 'punkty' %}>Пункты приема</a>
+                        <li class="nav-item"><a class="nav-link" href={% url 'punkty' %}>Пункты приема</a>
 
-                            </li>
-                        </ul>
+                        </li>
+                    </ul>
 
-                    </div>
-
-                    <div class="navbar-other w-20 d-flex ms-auto">
-                        <h3> (44) 746-52-92</h3>
-                        <!-- /.navbar-nav -->
-                    </div>
-                    <!-- /.navbar-other -->
                 </div>
-                <!-- /.container -->
-            </nav>
-            <!-- /.navbar -->
-        </header>
+
+                <div class="navbar-other w-20 p-1 ms-auto">
+                    <div class="contact-item w-100"><a href="tel:info@rpro.by" class="link-body"> <i class="uil uil-phone-volume"></i> (29) 392-44-92</a></div>
+                    <div class="contact-item w-100"><a href="mailto:info@rpro.by" class="link-body"> <i class="uil uil-envelope-heart"></i> info@rpro.by</a></div>
+
+                </div>
+                <!-- /.navbar-other -->
+            </div>
+            <!-- /.container -->
+        </nav>
+        <!-- /.navbar -->
+    </header>
         <section class="wrapper bg-light">
             <div class="container pt-8 pt-md-14">
                 <div class="row gx-lg-0 gx-xl-8 gy-10 gy-md-13 gy-lg-0 mb-7 mb-md-10 mb-lg-16 align-items-center">
@@ -65,8 +66,7 @@
                         <div class="d-flex justify-content-center justify-content-lg-start"
                              data-group="page-title-buttons">
                             <span><a href="#" class="btn btn-lg btn-primary rounded-pill me-2">Прайс-лист</a></span>
-                            <span><a href="#"
-                                     class="btn btn-lg btn-outline-primary rounded-pill">Задать вопрос</a></span>
+                            <span><a href="#" class="btn btn-lg btn-outline-primary rounded-pill">Задать вопрос</a></span>
                         </div>
                     </div>
                     <!--/column -->
@@ -258,8 +258,8 @@
         </section>
 
 
-        <section class="wrapper bg-light wrapper-border">
-            <div class="container py-14 py-md-16">
+        <section class="wrapper bg-light">
+            <div class="container py-10">
                 <div class="card bg-soft-primary rounded-4">
                     <div class="card-body p-md-10 p-xl-11">
                         <div class="row gx-lg-8 gx-xl-12 gy-10">
@@ -362,6 +362,57 @@
             <!-- /.container -->
 
         </section>
+
+
+    <section class="wrapper bg-light">
+
+			<div class="container">
+<section id="tabs" class="wrapper pb-10">
+						<div class="row">
+							<div class="col-lg-6">
+                                                    <h1 class="pb-4">Пункты приема РесайклПро</h1>
+
+								<div id="accordion-1" class="accordion-wrapper">
+									{% for region in regions %}
+									<div class="card">
+										<div class="card-header" id="heading-{{region.id}}">
+											<button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapse-{{region.id}}" aria-expanded="false" aria-controls="collapse-{{region.id}}">{{ region.region_name }}</button>
+										</div>
+										<!-- /.card-header -->
+										<div id="collapse-{{region.id}}" class="collapse" aria-labelledby="heading-{{region.id}}" data-bs-target="#accordion-1">
+											<div class="card-body">
+												<p>{{ region.region_short_desc }}</p>
+                                            <a  class="btn btn-primary btn-sm rounded-pill me-1 mb-2 mb-md-0" href={% url 'region' region_slug=region.region_slug %}>Подробнее о регионе</a>
+
+                                                <div>{% for punkt in region.punkt_set.all %}
+<div>
+                                                   <img src="{{ punkt.punkt_image.url}}" width="100">
+                                                    {{ punkt.punkt_name }}
+                                                    </div>
+                                                    {% endfor %}</div>
+											</div>
+											<!-- /.card-body -->
+										</div>
+										<!-- /.collapse -->
+									</div>
+									<!-- /.card -->
+{% endfor %}
+								</div>
+
+
+
+
+
+							</div>
+							<!--/column -->
+                        <div class="col-lg-6">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aee34905b75ecae79d8648305556c3802f77efa01900e4bbba72efc1daaed650d&amp;width=100%&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
+                        </div></div>
+						<!--/.row -->
+					</section>
+            </div>
+            </section>
+
     </div>
 {% endblock %}
 

@@ -113,5 +113,8 @@ const addNewProduct = async () => {
 
 }
 
-
+const senddata = () =>{
+    let data = document.querySelectorAll(".calcItemGroup")
+    console.log(data)
+}
 document.addEventListener("DOMContentLoaded", addNewProduct);

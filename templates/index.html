@@ -44,9 +44,10 @@
 
                 </div>
 
-                <div class="navbar-other w-20 d-flex ms-auto">
-                    <h3> (44) 746-52-92</h3>
-                    <!-- /.navbar-nav -->
+                <div class="navbar-other w-20 p-1 ms-auto">
+                    <div class="contact-item w-100"><a href="tel:info@rpro.by" class="link-body"> <i class="uil uil-phone-volume"></i> (29) 392-44-92</a></div>
+                    <div class="contact-item w-100"><a href="mailto:info@rpro.by" class="link-body"> <i class="uil uil-envelope-heart"></i> info@rpro.by</a></div>
+
                 </div>
                 <!-- /.navbar-other -->
             </div>
@@ -63,11 +64,11 @@
                         радиодетали</h1>
                 </div>
                 <!-- /column -->
-                <div class="col-lg-6 fw-bold">
+                <div class="col-lg-5 fw-bold">
                     <br class="lead fs-25 my-3">Если вы хотите сдать бытовую технику - закажите обратный звонок или
-                    свяжитесь с нами по телефону:</br>+375(44) 746-52-92</p>
+                   <a href="#" class="more hover link-green">узнайте подробности</a></p>
                     <a href="#" class="btn btn-violet rounded-pill mb-2 me-1">Заказать звонок</a>
-                    <a href="#" class="btn btn-violet rounded-pill mb-2 me-1">Онлайн заявка</a>
+
                 </div>
                 <!-- /column -->
             </div>
@@ -81,10 +82,10 @@
 
                         </div>
                         <div class="form-row calcItemSec">
-                                <a onclick="addNewProduct()" class="btn btn-violet rounded-pill mb-2 me-1">+</a>
+                                <a onclick="addNewProduct()" class="btn sec-button rounded-pill mb-2 me-1">+</a>
 
                            <div>
-                               <a class="btn btn-violet rounded-pill mb-2 me-1" data-bs-toggle="modal" data-bs-target="#modal-02">Оформить продажу</a>
+                               <a class="btn btn-violet rounded-pill mb-2 me-1" onclick="senddata()" data-bs-toggle="modal" data-bs-target="#modal-02">Оформить продажу</a>
                                <span class="badge bg-yellow rounded-pill summarycalc">Итого: <span id="finalprice">0</span></span>
 
                            </div>
@@ -162,6 +163,26 @@
         </div>
         <!-- /.container -->
     </section>
+<section class="wrapper bg-light">
+			<div class="container pt-16">
+				<h2 class="display-5 mb-7 center-block">Нам доверяют</h2>
+				<div class="carousel owl-carousel clients" data-margin="30" data-loop="true" data-dots="false" data-autoplay="true" data-autoplay-timeout="3000" data-responsive='{"0":{"items": "2"}, "768":{"items": "4"}, "992":{"items": "5"}, "1200":{"items": "6"}, "1400":{"items": "7"}}'>
+					<div class="item px-5"><img src={% static "/img/brands/c1.png" %} alt="" /></div>
+					<div class="item px-5"><img src={% static "/img/brands/c2.png" %} alt="" /></div>
+					<div class="item px-5"><img src={% static "/img/brands/c3.png" %} alt="" /></div>
+					<div class="item px-5"><img src={% static "/img/brands/c4.png" %} alt="" /></div>
+					<div class="item px-5"><img src={% static "/img/brands/c5.png" %} alt="" /></div>
+					<div class="item px-5"><img src={% static "/img/brands/c6.png" %} alt="" /></div>
+					<div class="item px-5"><img src={% static "/img/brands/c7.png" %} alt="" /></div>
+					<div class="item px-5"><img src={% static "/img/brands/c8.png" %} alt="" /></div>
+					<div class="item px-5"><img src={% static "/img/brands/c9.png" %} alt="" /></div>
+					<div class="item px-5"><img src={% static "/img/brands/c10.png" %} alt="" /></div>
+					<div class="item px-5"><img src={% static "/img/brands/c11.png" %} alt="" /></div>
+				</div>
+				<!-- /.owl-carousel -->
+			</div>
+			<!-- /.container -->
+		</section>
     <section class="wrapper bg-light wrapper-border">
 			<div class="container py-14 py-md-16">
 				<div class="row gx-lg-8 gx-xl-12 gy-10">
@@ -171,7 +192,7 @@
 					<!--/column -->
 					<div class="col-lg-6">
 						<h2 class="display-4 mb-3">Частые вопросы</h2>
-						<p class="lead fs-lg mb-6 pe-xxl-10">Если вы не нашли ответ <span class="underline">свяжитесь с нами</span>, мы с радостью ответим на них.</p>
+						<p class="lead fs-lg mb-6 pe-xxl-10">Если вы не нашли ответ свяжитесь с нами, мы с радостью ответим на них.</p>
 						<div class="accordion accordion-wrapper" id="accordionExample-2">
 							<div class="card plain accordion-item">
 								<div class="card-header" id="headingOne-2">
@@ -224,6 +245,70 @@
 			</div>
 			<!-- /.container -->
 		</section>
+
+
+<section class="wrapper bg-light">
+      <div class="container pb-14">
+        <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
+          <div class="col-lg-7 order-lg-2">
+            <figure><img class="w-auto" src={% static "img/concept/concept2.png" %} alt=""></figure>
+          </div>
+          <!--/column -->
+          <div class="col-lg-5">
+            <h2 class="fs-15 text-uppercase text-line text-primary mb-3">Why Choose Us?</h2>
+            <h3 class="display-5 mb-7">A few reasons why our valued customers choose us.</h3>
+            <div class="accordion accordion-wrapper" id="accordionExample">
+              <div class="card plain accordion-item">
+                <div class="card-header" id="headingOne">
+                  <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Professional Design </button>
+                </div>
+                <!--/.card-header -->
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel.</p>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.accordion-collapse -->
+              </div>
+              <!--/.accordion-item -->
+              <div class="card plain accordion-item">
+                <div class="card-header" id="headingTwo">
+                  <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> Top-Notch Support </button>
+                </div>
+                <!--/.card-header -->
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel.</p>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.accordion-collapse -->
+              </div>
+              <!--/.accordion-item -->
+              <div class="card plain accordion-item">
+                <div class="card-header" id="headingThree">
+                  <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> Header and Slider Options </button>
+                </div>
+                <!--/.card-header -->
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel.</p>
+                  </div>
+                  <!--/.card-body -->
+                </div>
+                <!--/.accordion-collapse -->
+              </div>
+              <!--/.accordion-item -->
+            </div>
+            <!--/.accordion -->
+          </div>
+          <!--/column -->
+        </div>
+        <!--/.row -->
+      </div>
+      <!-- /.container -->
+    </section>
 </div>
 
 
