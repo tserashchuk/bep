@@ -12,6 +12,25 @@ const getProds = async (category) => {
 
 const finalpri = document.getElementById('finalprice')
 
+
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+const csrftoken = getCookie('csrftoken');
+
 // =====================================================================================================================
 
 const productPrice = (e, p) => {
@@ -28,7 +47,6 @@ const productPrice = (e, p) => {
 
 
 const countProducts = async (e, p, countinfirmer) => {
-    console.log(e.path[0].options[e.path[0].options.selectedIndex].dataset.pricetext)
     countinfirmer.innerHTML = e.path[0].options[e.path[0].options.selectedIndex].dataset.pricetext
     p.setAttribute('data-price', e.target.value)
 }
@@ -113,8 +131,20 @@ const addNewProduct = async () => {
 
 }
 
-const senddata = () =>{
+const senddata = async () => {
     let data = document.querySelectorAll(".calcItemGroup")
-    console.log(data)
+    let productwrapper = document.querySelector("#productlist")
+    productwrapper.innerHTML = ''
+    for (let ip of data) {
+        let product = ip.querySelector('.prodform')
+        let price = ip.querySelector('.priceform')
+        console.log(product,price)
+        productwrapper.innerHTML += product.options[product.selectedIndex].text;
+        productwrapper.innerHTML += ' -- '+price.innerHTML+' BYN'
+        productwrapper.innerHTML += '<br/>'
+    }
+    let response = await fetch(`/`, {method: 'POST', headers: {"X-CSRFToken": csrftoken}})
+
+
 }
 document.addEventListener("DOMContentLoaded", addNewProduct);

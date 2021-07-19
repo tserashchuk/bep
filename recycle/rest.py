@@ -26,10 +26,6 @@ class ProductViewSet(ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['category_id']
 
-
-
-
-
 router = DefaultRouter()
 router.register('category', CatsViewSet)
 router.register('products', ProductViewSet)

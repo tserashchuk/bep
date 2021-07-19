@@ -16,8 +16,9 @@ class Home(View):
         data = json.dumps(list(data))
         return render(request, 'index.html')
 
-    def post(self, catID):
-        return '123'
+    def post(self, request):
+        print('qewewqewqewqewqewqewq')
+        return render(request, 'index.html')
 
 class ArticleView(View):
     def get(self, request,article_slug):
