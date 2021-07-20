@@ -40,6 +40,50 @@
                         <li class="nav-item"><a class="nav-link" href={% url 'punkty' %}>Пункты приема</a>
 
                         </li>
+
+<li class="nav-item"><a class="nav-link has-submenu" href="elements.html" id="sm-162677704259718-37" aria-haspopup="true" aria-controls="sm-162677704259718-38" aria-expanded="false">Услуги<span class="sub-arrow"></span></a>
+                <ul class="dropdown-menu mega-menu sm-nowrap hide-animation" id="sm-162677704259718-38" role="group" aria-hidden="true" aria-labelledby="sm-162677704259718-37" aria-expanded="false" style="width: auto; display: none; top: auto; left: 0px; margin-left: -547px; margin-top: 0px; min-width: 10rem; max-width: 25rem;">
+                  <li class="mega-menu-content">
+                    <div class="row gx-0 gx-lg-3">
+                      <div class="col-lg-6">
+                        <h6 class="dropdown-header">Физическим лицам</h6>
+                        <div class="row gx-0">
+                          <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                              <li><a class="dropdown-item scroll" href={% url 'priem' %}>Прием бытовой техники</a></li>
+                              <li><a class="dropdown-item scroll" href={% url 'vyvoz' %}>Вывоз бытовой техники</a></li>
+
+                            </ul>
+                          </div>
+                          <!--/column -->
+
+                          <!--/column -->
+                        </div>
+                        <!--/.row -->
+                      </div>
+                      <!--/column -->
+                      <div class="col-lg-3">
+                        <h6 class="dropdown-header">Юридическим лицам</h6>
+                        <ul class="list-unstyled">
+                         <li><a class="dropdown-item scroll" href={% url 'spisanie' %}>Переработка (списание) электронного оборудования</a></li>
+                         <li><a class="dropdown-item scroll" href={% url 'yuriki' %}>Переработка лома и отходов драгметаллов</a></li>
+                         <li><a class="dropdown-item scroll" href={% url 'bezvozm' %}>Безвозмездная сдача техники</a></li>
+                        </ul>
+                      </div>
+                      <!--/column -->
+
+                      <!--/column -->
+                    </div>
+                    <!--/.row -->
+                  </li>
+                  <!--/.mega-menu-content-->
+                </ul>
+                <!--/.dropdown-menu -->
+              </li>
+
+
+
+
                     </ul>
 
                 </div>
@@ -164,7 +208,7 @@
         <!-- /.container -->
     </section>
 <section class="wrapper bg-light">
-			<div class="container pt-16">
+			<div class="container pt-10">
 				<h2 class="display-5 mb-7 center-block">Нам доверяют</h2>
 				<div class="carousel owl-carousel clients" data-margin="30" data-loop="true" data-dots="false" data-autoplay="true" data-autoplay-timeout="3000" data-responsive='{"0":{"items": "2"}, "768":{"items": "4"}, "992":{"items": "5"}, "1200":{"items": "6"}, "1400":{"items": "7"}}'>
 					<div class="item px-5"><img src={% static "/img/brands/c1.jpg" %} alt="" /></div>
@@ -181,68 +225,109 @@
 			</div>
 			<!-- /.container -->
 		</section>
-    <section class="wrapper bg-light wrapper-border">
-			<div class="container py-14 py-md-16">
-				<div class="row gx-lg-8 gx-xl-12 gy-10">
-					<div class="col-lg-6">
-						<figure><img class="w-auto" src={% static '1.jpg' %} alt=""></figure>
-					</div>
-					<!--/column -->
-					<div class="col-lg-6">
-						<h2 class="display-4 mb-3">Частые вопросы</h2>
-						<p class="lead fs-lg mb-6 pe-xxl-10">Если вы не нашли ответ свяжитесь с нами, мы с радостью ответим на них.</p>
-						<div class="accordion accordion-wrapper" id="accordionExample-2">
-							<div class="card plain accordion-item">
-								<div class="card-header" id="headingOne-2">
-									<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne-2" aria-expanded="false" aria-controls="collapseOne-2"> Вы работаете официально? </button>
-								</div>
-								<!--/.card-header -->
-								<div id="collapseOne-2" class="accordion-collapse collapse" aria-labelledby="headingOne-2" data-bs-parent="#accordionExample-2" style="">
-									<div class="card-body">
-										<p>ООО «РесайклПро» имеет  специальное разрешение (лицензию) на право осуществления деятельности, связанной с драгоценными металлами и драгоценными камнями № 02200/17-01391, выданной Министерством финансов Республики Беларусь на основании решения от 09 сентября 2016 г.</p>
-									</div>
-									<!--/.card-body -->
-								</div>
-								<!--/.accordion-collapse -->
-							</div>
-							<!--/.accordion-item -->
-							<div class="card plain accordion-item">
-								<div class="card-header" id="headingTwo-2">
-									<button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo-2" aria-expanded="false" aria-controls="collapseTwo-2"> Which payment methods do you accept? </button>
-								</div>
-								<!--/.card-header -->
-								<div id="collapseTwo-2" class="accordion-collapse collapse" aria-labelledby="headingTwo-2" data-bs-parent="#accordionExample-2" style="">
-									<div class="card-body">
-										<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel.</p>
-									</div>
-									<!--/.card-body -->
-								</div>
-								<!--/.accordion-collapse -->
-							</div>
-							<!--/.accordion-item -->
-							<div class="card plain accordion-item">
-								<div class="card-header" id="headingThree-2">
-									<button class="" data-bs-toggle="collapse" data-bs-target="#collapseThree-2" aria-expanded="true" aria-controls="collapseThree-2"> How can I manage my Account? </button>
-								</div>
-								<!--/.card-header -->
-								<div id="collapseThree-2" class="accordion-collapse collapse show" aria-labelledby="headingThree-2" data-bs-parent="#accordionExample-2" style="">
-									<div class="card-body">
-										<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel.</p>
-									</div>
-									<!--/.card-body -->
-								</div>
-								<!--/.accordion-collapse -->
-							</div>
-							<!--/.accordion-item -->
-						</div>
-						<!--/.accordion -->
-					</div>
-					<!--/column -->
-				</div>
-				<!--/.row -->
-			</div>
-			<!-- /.container -->
-		</section>
+    <section class="wrapper bg-light">
+            <div class="container py-10">
+                <div class="card bg-soft-primary rounded-4">
+                    <div class="card-body p-md-10 p-xl-11">
+                        <div class="row gx-lg-8 gx-xl-12 gy-10">
+                            <div class="col-lg-6">
+                                <h3 class="display-4 mb-4">Часто задаваемые вопросы</h3>
+                                <p class="lead fs-lg mb-0">РесайклПро имеет сеть приемных пунктов по всей Беларуси. Хотите посмотреть полный список приемных пунктов? — <a href="{% url 'punkty' %}">Жмите сюда!</a></p>
+                            </div>
+                            <!--/column -->
+                            <div class="col-lg-6">
+                                <div class="accordion accordion-wrapper" id="accordionExample">
+                                    <div class="card plain accordion-item">
+                                        <div class="card-header" id="headingOne">
+                                            <button class="collapsed" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseOne" aria-expanded="true"
+                                                    aria-controls="collapseOne">How do I get my subscription receipt?
+                                            </button>
+                                        </div>
+                                        <!--/.card-header -->
+                                        <div id="collapseOne" class="accordion-collapse collapse"
+                                             aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+                                                    nibh, ut fermentum massa justo sit amet risus.</p>
+                                            </div>
+                                            <!--/.card-body -->
+                                        </div>
+                                        <!--/.accordion-collapse -->
+                                    </div>
+                                    <!--/.accordion-item -->
+                                    <div class="card plain accordion-item">
+                                        <div class="card-header" id="headingTwo">
+                                            <button class="collapsed" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseTwo" aria-expanded="false"
+                                                    aria-controls="collapseTwo">Are there any discounts for people in
+                                                need?
+                                            </button>
+                                        </div>
+                                        <!--/.card-header -->
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                             aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+                                                    nibh, ut fermentum massa justo sit amet risus.</p>
+                                            </div>
+                                            <!--/.card-body -->
+                                        </div>
+                                        <!--/.accordion-collapse -->
+                                    </div>
+                                    <!--/.accordion-item -->
+                                    <div class="card plain accordion-item">
+                                        <div class="card-header" id="headingThree">
+                                            <button class="collapsed" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseThree" aria-expanded="false"
+                                                    aria-controls="collapseThree">Do you offer a free trial edit?
+                                            </button>
+                                        </div>
+                                        <!--/.card-header -->
+                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                             aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+                                                    nibh, ut fermentum massa justo sit amet risus.</p>
+                                            </div>
+                                            <!--/.card-body -->
+                                        </div>
+                                        <!--/.accordion-collapse -->
+                                    </div>
+                                    <!--/.accordion-item -->
+                                    <div class="card plain accordion-item">
+                                        <div class="card-header" id="headingFour">
+                                            <button class="collapsed" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseFour" aria-expanded="false"
+                                                    aria-controls="collapseFour">How do I reset my Account password?
+                                            </button>
+                                        </div>
+                                        <!--/.card-header -->
+                                        <div id="collapseFour" class="accordion-collapse collapse"
+                                             aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+                                                    nibh, ut fermentum massa justo sit amet risus.</p>
+                                            </div>
+                                            <!--/.card-body -->
+                                        </div>
+                                        <!--/.accordion-collapse -->
+                                    </div>
+                                    <!--/.accordion-item -->
+                                </div>
+                                <!--/.accordion -->
+                            </div>
+                            <!--/column -->
+                        </div>
+                        <!--/.row -->
+                    </div>
+                    <!--/.card-body -->
+                </div>
+                <!--/.card -->
+            </div>
+            <!-- /.container -->
+
+        </section>
 
 
 <section class="wrapper bg-light">
