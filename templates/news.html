@@ -54,7 +54,7 @@
 				<div class="row">
 					<div class="col-md-7 col-lg-6 col-xl-5 mx-auto">
 						<h1 class="display-1 mb-3">Новости РПРО</h1>
-						<p class="lead px-lg-5 px-xxl-8">Welcome to our journal. Here you can find the latest company news and business articles.</p>
+
 					</div>
 					<!-- /column -->
 				</div>
@@ -74,16 +74,14 @@
                                 {% for article in articles %}
 								<article class="item post col-md-6" style="position: absolute; left: 0%; top: 0px;">
 									<div class="card">
-										<figure class="card-img-top overlay overlay1 hover-scale"><a href="#"><span class="bg"></span> <img src={{ article.article_image.url }} alt=""></a>
+										<figure class="card-img-top overlay overlay1 hover-scale"><a href="{% url 'article' article_slug=article.article_slug %}"><span class="bg"></span> <img src={{ article.article_image.url }} alt=""></a>
 											<figcaption>
 												<h5 class="from-top mb-0">Подробнее</h5>
 											</figcaption>
 										</figure>
 										<div class="card-body">
 											<div class="post-header">
-												<div class="post-category text-line">
-													<a href="#" class="hover" rel="category">Coding</a>
-												</div>
+
 												<!-- /.post-category -->
 												<h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="blog-post.html">{{ article.article_name }}</a></h2>
 											</div>
