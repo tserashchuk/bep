@@ -108,8 +108,8 @@
                                             <a  class="btn btn-primary btn-sm rounded-pill me-1 mb-2 mb-md-0" href={% url 'region' region_slug=region.region_slug %}>Подробнее о регионе</a>
 
                                                 <div>{% for punkt in region.punkt_set.all %}
-<div>
-                                                   <img src="{{ punkt.punkt_image.url}}" width="100">
+<div class="pt-3">
+
                                                     {{ punkt.punkt_name }}
                                                     </div>
                                                     {% endfor %}</div>
