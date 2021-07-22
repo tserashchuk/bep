@@ -3,19 +3,19 @@ from django.db import models
 from django_editorjs_fields import EditorJsJSONField, EditorJsTextField
 
 PURCACHE_CHOICES = (
-    ('Килограмм','за кг'),
-    ('Штук', 'за шт')
+    ('Килограмм','кг'),
+    ('Штук', 'шт')
 )
 
 
 class Category(models.Model):
     cat_name = models.CharField('Название категории продукта', max_length=200)
     cat_slug = models.CharField('URL', max_length=200, default='slug' + str(datetime.datetime.now()))
-    cat_title = models.CharField('Заголовок title', max_length=200)
-    cat_metadesc = models.CharField('Описание description', max_length=300)
+    cat_title = models.CharField('Заголовок title', max_length=200, blank=True)
+    cat_metadesc = models.CharField('Описание description', max_length=300, blank=True)
     cat_short_desc = models.TextField('Короткое описание', blank=True)
     cat_desc = models.TextField('Полное описание', blank=True)
-    cat_image = models.ImageField('Изображение категории')
+    cat_image = models.ImageField('Изображение категории', default='IMG_4280_копия.jpg')
 
     def __str__(self):
         return self.cat_name
@@ -24,11 +24,11 @@ class Product(models.Model):
     product_name = models.CharField('Название продукта', max_length=200)
     product_title = models.CharField('Заголовок title', max_length=200)
     color = models.CharField('Оплата', max_length=10, choices=PURCACHE_CHOICES, default='kg')
-    product_price = models.IntegerField('Цена', blank=True, null=True)
+    product_price = models.CharField('Цена', max_length=200, blank=True, null=True)
     product_metadesc = models.CharField('Описание description', max_length=300)
     product_short_desc = models.TextField('Короткое описание', blank=True)
     product_desc = models.TextField('Полное описание', blank=True)
-    product_image = models.ImageField('Изображение продукта')
+    product_image = models.ImageField('Изображение продукта', default='IMG_4280_копия.jpg')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
 
