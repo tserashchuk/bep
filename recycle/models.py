@@ -15,7 +15,7 @@ class Category(models.Model):
     cat_metadesc = models.CharField('Описание description', max_length=300, blank=True)
     cat_short_desc = models.TextField('Короткое описание', blank=True)
     cat_desc = models.TextField('Полное описание', blank=True)
-    cat_image = models.ImageField('Изображение категории', default='IMG_4280_копия.jpg')
+    cat_image = models.ImageField('Изображение категории', default='placeholder.jpg')
 
     def __str__(self):
         return self.cat_name
@@ -28,7 +28,7 @@ class Product(models.Model):
     product_metadesc = models.CharField('Описание description', max_length=300)
     product_short_desc = models.TextField('Короткое описание', blank=True)
     product_desc = models.TextField('Полное описание', blank=True)
-    product_image = models.ImageField('Изображение продукта', default='IMG_4280_копия.jpg')
+    product_image = models.ImageField('Изображение продукта', default='placeholder.jpg')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
 

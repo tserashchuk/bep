@@ -1,10 +1,12 @@
-from recycle.models import *
-from recycle.forms import CsvImportForm
 import codecs
-from django.contrib import admin
-from django.urls import path
-from django.shortcuts import render, redirect
 import csv
+
+from django.contrib import admin
+from django.shortcuts import render, redirect
+from django.urls import path
+
+from recycle.forms import CsvImportForm
+from recycle.models import *
 
 admin.site.register(Category, admin.ModelAdmin)
 admin.site.register(Article, admin.ModelAdmin)
@@ -31,18 +33,17 @@ class ProductAdmin(admin.ModelAdmin):
             reader = csv.DictReader(codecs.iterdecode(csv_file, 'utf-8'))
             for row in reader:
                 category, catcreate = Category.objects.get_or_create(cat_name = row['категория'])
-                product, prcreate = Product.objects.update_or_create( id=row['код'], product_price = row['Цена, р/ед'], defaults={'id':row['код'], 'product_name':row['Название'], 'color':row['ед. изм.'], 'product_price' :row['Цена, р/ед'], 'category':category, 'product_image':'IMG_4280_копия.jpg'})
+                product, prcreate = Product.objects.update_or_create( id=row['код'],
+
+                                                                      defaults={'id':row['код'],
+                                                                                'product_name':row['Название'],
+                                                                                'color':row['ед. изм.'],
+                                                                                'product_price' :row['Цена, р/ед'],
+                                                                                'category':category,
+                                                                                'product_image':'placeholder.jpg',
+                                                                                'product_short_desc':row['Описание']
+                                                                                })
                 print(product, prcreate)
-
-                # try:
-                #     print(row['код'])
-                #     product = Product.objects.create(id=row['код'], product_name=row['Название'], color=row['ед. изм.'], product_price = row['Цена, р/ед'], category=category, product_image='IMG_4280_копия.jpg')
-                # except:
-                #     print(row['код'])
-                #     product1 = Product.objects.get(id=row['код'])
-                #     print(product1)
-
-
             self.message_user(request, "Продукты импортированы")
             return redirect("..")
         if request.method == "GET":
