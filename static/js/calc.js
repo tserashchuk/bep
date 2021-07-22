@@ -34,7 +34,9 @@ const csrftoken = getCookie('csrftoken');
 // =====================================================================================================================
 
 const productPrice = (e, p) => {
-    p.innerHTML = Number(e.target.dataset.price) * Number(e.target.value)
+    console.log(e.target)
+    console.log(Number(e.target.dataset.price.replace(',','.')).toFixed(1))
+    p.innerHTML = Number(e.target.dataset.price.replace(',','.')).toFixed(2) * Number(e.target.value)
     const finalpri = document.getElementById('finalprice')
     let total = 0
     let prices = document.querySelectorAll(".priceform")
