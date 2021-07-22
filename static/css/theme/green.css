@@ -32560,23 +32560,23 @@ button.hamburger.animate.active:after {
     height: 0.9rem;
 }
 
-@font-face {
-    font-family: "Unicons";
-    src: url("../../fonts/unicons/Unicons.eot?muc7dc");
-    src: url("../../fonts/unicons/Unicons.eot?muc7dc#iefix") format("embedded-opentype"), url("../../fonts/unicons/Unicons.ttf?muc7dc") format("truetype"), url("../../fonts/unicons/Unicons.woff?muc7dc") format("woff"), url("../../fonts/unicons/Unicons.svg?muc7dc#Unicons") format("svg");
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-}
+/*@font-face {*/
+/*    font-family: "Unicons";*/
+/*    src: url("../../fonts/unicons/Unicons.eot?muc7dc");*/
+/*    src: url("../../fonts/unicons/Unicons.eot?muc7dc#iefix") format("embedded-opentype"), url("../../fonts/unicons/Unicons.ttf?muc7dc") format("truetype"), url("../../fonts/unicons/Unicons.woff?muc7dc") format("woff"), url("../../fonts/unicons/Unicons.svg?muc7dc#Unicons") format("svg");*/
+/*    font-weight: normal;*/
+/*    font-style: normal;*/
+/*    font-display: block;*/
+/*}*/
 
-@font-face {
-    font-family: "Custom";
-    src: url("../../fonts/custom/Custom.eot?z33z5m");
-    src: url("../../fonts/custom/Custom.eot?z33z5m#iefix") format("embedded-opentype"), url("../../fonts/custom/Custom.ttf?z33z5m") format("truetype"), url("../../fonts/custom/Custom.woff?z33z5m") format("woff"), url("../../fonts/custom/Custom.svg?z33z5m#Custom") format("svg");
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-}
+/*@font-face {*/
+/*    font-family: "Custom";*/
+/*    src: url("../../fonts/custom/Custom.eot?z33z5m");*/
+/*    src: url("../../fonts/custom/Custom.eot?z33z5m#iefix") format("embedded-opentype"), url("../../fonts/custom/Custom.ttf?z33z5m") format("truetype"), url("../../fonts/custom/Custom.woff?z33z5m") format("woff"), url("../../fonts/custom/Custom.svg?z33z5m#Custom") format("svg");*/
+/*    font-weight: normal;*/
+/*    font-style: normal;*/
+/*    font-display: block;*/
+/*}*/
 
 [class^="uil-"],
 [class*=" uil-"],
