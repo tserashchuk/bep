@@ -16,28 +16,41 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
 
 from recycle import views, rest
+from recycle.sitemap import CategorySitemap, ArticlesSitemap, ServicesSitemap, RegionSitemap, HomeSitemap
+
+sitemaps = {
+    'home': HomeSitemap,
+    'category': CategorySitemap,
+    'article': ArticlesSitemap,
+    'service': ServicesSitemap,
+    'punkt': RegionSitemap
+
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.Home.as_view(), name='home'),
-    path('p/', views.CategoryView.as_view(), name='category'),
-    path('p/<str:cat_slug>', views.Products.as_view(), name='products'),
-    path('c/', views.Contact.as_view(), name='contact'),
-    path('s/', views.Skupka.as_view(), name='skupka'),
-    path('pp/', views.Punkty.as_view(), name='punkty'),
+    path('category/', views.CategoryView.as_view(), name='category'),
+    path('category/<str:cat_slug>', views.Products.as_view(), name='products'),
+    path('contact/', views.Contact.as_view(), name='contact'),
+    path('skupka-radiodetaley/', views.Skupka.as_view(), name='skupka'),
+    path('punkty-priema/', views.Punkty.as_view(), name='punkty'),
     path('news/', views.News.as_view(), name='news'),
     path('news/<str:article_slug>', views.ArticleView.as_view(), name='article'),
-    path('b/', views.Bytov.as_view(), name='priem'),
-    path('v/', views.Vyvoz.as_view(), name='vyvoz'),
-    path('y/', views.Yuriki.as_view(), name='yuriki'),
-    path('bezvozm/', views.Bezvozmezdno.as_view(), name='bezvozm'),
-    path('spisanie/', views.Spisanie.as_view(), name='spisanie'),
+    path('priem-bytovoy-tehniki/', views.Bytov.as_view(), name='priem'),
+    path('vyvos-bytovoy-tehniki/', views.Vyvoz.as_view(), name='vyvoz'),
+    path('utilizaciya-tehniki/', views.Yuriki.as_view(), name='yuriki'),
+    path('bezvozmezdnaya/', views.Bezvozmezdno.as_view(), name='bezvozm'),
+    path('spisanie-teh-sostoyanie/', views.Spisanie.as_view(), name='spisanie'),
     path('region/<str:region_slug>', views.RegionView.as_view(), name='region'),
     path('editorjs/', include('django_editorjs_fields.urls')),
-    path('api-auth/', include(rest.router.urls))
+    path('api-auth/', include(rest.router.urls)),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

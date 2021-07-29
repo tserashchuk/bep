@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'django_filters',
-    'django_editorjs_fields'
+    'django_editorjs_fields',
+    'django.contrib.sitemaps'
 ]
 
 MIDDLEWARE = [

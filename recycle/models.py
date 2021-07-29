@@ -20,6 +20,9 @@ class Category(models.Model):
     def __str__(self):
         return self.cat_name
 
+    def get_absolute_url(self):
+        return f'/{self.cat_slug}'
+
 class Product(models.Model):
     product_name = models.CharField('Название продукта', max_length=200)
     product_title = models.CharField('Заголовок title', max_length=200)
@@ -48,6 +51,8 @@ class Article(models.Model):
     def __str__(self):
         return self.article_name
 
+    def get_absolute_url(self):
+        return f'/{self.article_slug}'
 
 class Region(models.Model):
     region_name = models.CharField('Название региона', max_length=200)
@@ -59,6 +64,9 @@ class Region(models.Model):
 
     def __str__(self):
         return self.region_name
+
+    def get_absolute_url(self):
+        return f'/{self.region_slug}'
 
 
 class Punkt(models.Model):
@@ -73,6 +81,7 @@ class Punkt(models.Model):
 
     def __str__(self):
         return self.punkt_name
+
 
 class Agent(models.Model):
     agent_name = models.CharField('Имя агента', max_length=200)
