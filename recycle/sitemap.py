@@ -2,7 +2,7 @@ from django.contrib.sitemaps import Sitemap
 from recycle.models import Category, Article, Region
 from django.shortcuts import reverse
 class CategorySitemap(Sitemap):
-    changefreq = "never"
+    changefreq = "monthly"
     priority = 0.8
 
 
@@ -11,7 +11,7 @@ class CategorySitemap(Sitemap):
 
 class ServicesSitemap(Sitemap):
 
-    changefreq = "never"
+    changefreq = "monthly"
     priority = 0.5
 
     def items(self):
@@ -22,7 +22,7 @@ class ServicesSitemap(Sitemap):
 
 class HomeSitemap(Sitemap):
 
-    changefreq = "never"
+    changefreq = "monthly"
     priority = 1
 
     def items(self):
@@ -32,14 +32,14 @@ class HomeSitemap(Sitemap):
         return reverse(item)
 
 class ArticlesSitemap(Sitemap):
-    changefreq = "never"
+    changefreq = "monthly"
     priority = 0.2
 
     def items(self):
         return Article.objects.all().order_by('article_slug')
 
 class RegionSitemap(Sitemap):
-    changefreq = "never"
+    changefreq = "monthly"
     priority = 0.2
 
     def items(self):
