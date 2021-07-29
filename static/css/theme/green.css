@@ -39072,3 +39072,14 @@ footer.bg-dark.angled.lower-start:after, footer.bg-dark.angled.upper-start:befor
         padding-bottom: 60px;
     }
 }
+
+.h4like{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    /*color: #343f52;*/
+    word-spacing: 0.1rem;
+    letter-spacing: -0.01rem;
+    line-height: 1.45;
+    font-size: 0.95rem;
+}

@@ -21,7 +21,8 @@
                   <li class="mega-menu-content">
                     <div class="row gx-0 gx-lg-3">
                       <div class="col-lg-6">
-                        <h6 class="dropdown-header">Физическим лицам</h6>
+                        <span class="dropdown-header">Физическим лицам</span>
+
                         <div class="row gx-0">
                           <div class="col-lg-6">
                             <ul class="list-unstyled">
@@ -38,7 +39,7 @@
                       </div>
                       <!--/column -->
                       <div class="col-lg-3">
-                        <h6 class="dropdown-header">Юридическим лицам</h6>
+                        <span class="dropdown-header">Юридическим лицам</span>
                         <ul class="list-unstyled">
                          <li><a class="dropdown-item scroll" href={% url 'spisanie' %}>Списание. Определение тех состояния</a></li>
                          <li><a class="dropdown-item scroll" href={% url 'yuriki' %}>Переработка лома и отходов драгметаллов</a></li>
@@ -146,7 +147,7 @@
                                             <div class="post-category text-line mb-3 text-yellow">(0,25р за кг) в
                                                 среднем ≈ 3,75 BYN
                                             </div>
-                                            <h2 class="post-title h3">Телевизор</h2>
+                                            <div class="h4like" class="post-title h3">Телевизор</div>
                                         </div>
                                         <!-- /.post-header -->
                                     </div>
@@ -161,7 +162,7 @@
                                         <div class="post-header">
                                             <div class="post-category text-line mb-3 text-red">(0,25р за кг) в среднем ≈ 10 BYN
                                             </div>
-                                            <h2 class="post-title h3">Холодильник</h2>
+                                            <div class="h4like" class="post-title h3">Холодильник</div>
                                         </div>
                                         <!-- /.post-header -->
                                     </div>
@@ -177,7 +178,7 @@
                                             <div class="post-category text-line mb-3 text-orange">(0,25р за кг) в
                                                 среднем ≈ 12,5 BYN
                                             </div>
-                                            <h2 class="post-title h3">Стиральную машину</h2>
+                                            <div class="h4like" class="post-title h3">Стиральную машину</div>
                                         </div>
                                         <!-- /.post-header -->
                                     </div>
@@ -193,7 +194,7 @@
                                             <div class="post-category text-line mb-3 text-purple">(0,25р за кг) в
                                                 среднем ≈ 6,25 BYN
                                             </div>
-                                            <h2 class="post-title h3">Плиту</h2>
+                                            <div class="h4like" class="post-title h3">Плиту</div>
                                         </div>
                                         <!-- /.post-header -->
                                     </div>
@@ -227,20 +228,20 @@
                     <div class="col-md-6 col-lg-3"><span
                             class="icon btn btn-circle btn-lg btn-primary disabled mb-4"><span
                             class="number">01</span></span>
-                        <h4 class="mb-1">Выберите удобный для вас пункт приема</h4>
+                        <div class="mb-1 h4like">Выберите удобный для вас пункт приема</div>
                         <p>Вы можете посмотреть все <a href="{% url 'punkty' %}">пункты према</a> или связаться с нами любым удобным способом - например <a href="#" data-bs-toggle="modal" data-bs-target="#modal-01">заказать звонок</a></p>
                     </div>
                     <!--/column -->
                     <div class="col-md-6 col-lg-3"><span
                             class="icon btn btn-circle btn-lg btn-soft-primary  disabled mb-4"><span class="number">02</span></span>
-                        <h4 class="mb-1">Привезти материал на пункт приема</h4>
+                        <div class="mb-1 h4like">Привезти материал на пункт приема</div>
                         <p>Вашу технику взвесят и проведут ее оценку</p>
                     </div>
                     <!--/column -->
                     <div class="col-md-6 col-lg-3"><span
                             class="icon btn btn-circle btn-lg btn-soft-primary disabled mb-4"><span
                             class="number">03</span></span>
-                        <h4 class="mb-1">Выплата вознаграждения наличными на руки</h4>
+                        <div class="mb-1 h4like">Выплата вознаграждения наличными на руки</div>
                         <p>После оценки техники на приемном пункте вам выплатят 0,25 BYN за каждый килограмм</p>
                     </div>
                     <!--/column -->
@@ -290,7 +291,7 @@
                     <div class="card-body p-md-10 p-xl-11">
                         <div class="row gx-lg-8 gx-xl-12 gy-10">
                             <div class="col-lg-6">
-                               <h3 class="display-4 mb-4">Часто задаваемые вопросы</h3>
+                               <h2 class="display-4 mb-4">Часто задаваемые вопросы</h2>
                                 <p class="lead fs-lg mb-0">Если вы не нашли ответа на свой вопрос позвоните нам или закажите <a href="#" data-bs-toggle="modal" data-bs-target="#modal-01">обратный звонок</a></p>
                             </div>
                             <!--/column -->
