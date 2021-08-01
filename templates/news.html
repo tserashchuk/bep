@@ -122,7 +122,7 @@
 											<div class="post-header">
 
 												<!-- /.post-category -->
-												<h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="blog-post.html">{{ article.article_name }}</a></h2>
+												<h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href={% url 'article' article_slug=article.article_slug %}>{{ article.article_name }}</a></h2>
 											</div>
 											<!-- /.post-header -->
 											<div class="post-content">
