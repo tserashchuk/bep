@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.views import View
 
 from recycle.models import *
-
+from bitrix24 import *
 
 class Home(View):
     def get(self, request):
@@ -17,7 +17,28 @@ class Home(View):
         return render(request, 'index.html')
 
     def post(self, request):
-        print('qewewqewqewqewqewqewq')
+
+        try:
+            products12 = request.POST['ppp']
+            phone = request.POST['PHONE']
+            name = request.POST['NAME']
+            bx24 = Bitrix24('https://rpro.bitrix24.by/rest/16/nz5xj3a8vr0hv140/')
+            bx24.callMethod('crm.lead.add',
+                            fields={
+                                    "TITLE": name,
+                                    "NAME": 'sdfsfd',
+                                    "STATUS_ID": "NEW",
+                                    "OPENED": "Y",
+                                    "ASSIGNED_BY_ID": 890,
+                                    "PHONE": [{"VALUE": phone, "VALUE_TYPE": "WORK"}],
+                                    "UF_CRM_1614585863220":products12
+                                },
+            )
+        except Exception as e:
+            print(e)
+
+
+
         return render(request, 'index.html')
 
 class ArticleView(View):

@@ -92,5 +92,7 @@ class Agent(models.Model):
     body_editorjs = EditorJsJSONField()
     region = models.ForeignKey(Region, on_delete=models.CASCADE)
 
+
+
     def __str__(self):
         return self.agent_name

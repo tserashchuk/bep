@@ -135,16 +135,19 @@ const addNewProduct = async () => {
 const senddata = async () => {
     let data = document.querySelectorAll(".calcItemGroup")
     let productwrapper = document.querySelector("#productlist")
+    let productsenderdata = document.querySelector("#productssender")
     productwrapper.innerHTML = ''
+    productsenderdata.value = ''
     for (let ip of data) {
         let product = ip.querySelector('.prodform')
         let price = ip.querySelector('.priceform')
-        console.log(product,price)
+
         productwrapper.innerHTML += product.options[product.selectedIndex].text;
         productwrapper.innerHTML += ' -- '+price.innerHTML+' BYN'
         productwrapper.innerHTML += '<br/>'
     }
-    let response = await fetch(`/`, {method: 'POST', headers: {"X-CSRFToken": csrftoken}})
+    productsenderdata.value = String(productwrapper.innerText)
+
 
 
 }

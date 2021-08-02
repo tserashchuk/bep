@@ -104,12 +104,17 @@
                 <div class="newsletter-wrapper">
                     <div class="row">
                         <div class="col-md-10 offset-md-1">
-                            <input type="text" value="" name="NAME"
-                                   class="required email form-control" placeholder="Имя">
-                            <input type="text" value="" name="PHONE"
-                                   class="required email form-control" placeholder="Телефон">
-                            <a href="#"
-                               class="btn btn-violet rounded-pill mb-2 me-1">Оформить</a>
+                            <form method="POST" action="/">
+                                {% csrf_token %}
+                                <input type="text" value="" name="NAME"
+                                       class="required email form-control" placeholder="Имя">
+                                <input type="text" value="" name="PHONE"
+                                       class="required email form-control" placeholder="Телефон">
+                                <input type="text" id='productssender' value="1" name="ppp"
+                                       class="form-control">
+                                <input class="btn btn-violet rounded-pill mb-2 me-1" type="submit"
+                                       placeholder="Отправить"/>
+                            </form>
                         </div>
                         <!-- /.newsletter-wrapper -->
                     </div>
