@@ -38916,7 +38916,7 @@ footer.bg-dark.angled.lower-start:after, footer.bg-dark.angled.upper-start:befor
         display: flex;
         padding-left: 50px;
         padding-right: 50px;
-        padding-top: 50px;
+        padding-top: 0px;
 
     }
 
@@ -38950,7 +38950,7 @@ footer.bg-dark.angled.lower-start:after, footer.bg-dark.angled.upper-start:befor
 
         padding-left: 10px;
         padding-right: 10px;
-        padding-top: 50px;
+        padding-top: 0px;
     }
 
     .calcItemSec {
@@ -38983,7 +38983,7 @@ footer.bg-dark.angled.lower-start:after, footer.bg-dark.angled.upper-start:befor
 
         padding-left: 10px;
         padding-right: 10px;
-        padding-top: 50px;
+        padding-top: 0px;
     }
 
     .calcItemSec {
@@ -39065,7 +39065,7 @@ footer.bg-dark.angled.lower-start:after, footer.bg-dark.angled.upper-start:befor
         display: flex;
         padding-left: 50px;
         padding-right: 50px;
-        padding-top: 50px;
+        padding-top: 0px;
     }
 
     .calcItemSec {
@@ -39092,4 +39092,11 @@ footer.bg-dark.angled.lower-start:after, footer.bg-dark.angled.upper-start:befor
     letter-spacing: -0.01rem;
     line-height: 1.45;
     font-size: 0.95rem;
+}
+
+.calcheader{
+    padding: 15px 0px 15px 50px;
+    font-weight: bold;
+    color:#fff;
+    font-size:18px;
 }

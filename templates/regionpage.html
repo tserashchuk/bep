@@ -150,32 +150,7 @@
 		</section>
 
     <section class="container">
-        <div class="row grid-view py-16">
-            <div class="pb-4">
-            <h1 class="display-4 mb-3 pe-xl-10">Агенты по закупкам</h1>
-            <p class="lead fs-lg mb-0 pe-xxl-10">Эти сотрудники помогут вам со сдачей радиодеталей и бытовой техники</p>
-            </div>
-			{% for agent in region.agent_set.all %}
-				<div class="col-md-6 col-lg-3">
-						<div class="position-relative">
-							<div class="shape rounded bg-soft-primary rellax d-md-block" data-rellax-speed="0" style="bottom: -0.75rem; right: -0.75rem; width: 98%; height: 98%; z-index: 0; transform: translate3d(0px, 0px, 0px);"></div>
-							<div class="card shadow-lg">
-								<figure class="card-img-top"><img class="img-fluid" src={{ agent.agent_image.url }} alt=""></figure>
-								<div class="card-body px-6 py-5">
-									<div class="mb-1 h4like">{{ agent.agent_name }}</div>
-									<p class="mb-0">Агент по закупкам</p>
-								</div>
-								<!--/.card-body -->
-							</div>
-							<!-- /.card -->
-						</div>
-						<!-- /div -->
-					</div>
-			{% endfor %}
-				</div>
-    </section>
- <section class="container">
-        <div class="row grid-view pb-16">
+        <div class="row grid-view pt-10">
             <div class="pb-4">
             <h1 class="display-4 mb-3 pe-xl-10">Пункты приема</h1>
             <p class="lead fs-lg mb-0 pe-xxl-10">В этих пунктах можно сдать технику и радиодетали</p>
@@ -200,5 +175,32 @@
 			{% endfor %}
 				</div>
     </section>
+
+    <section class="container">
+        <div class="row grid-view py-10">
+            <div class="pb-4">
+            <h1 class="display-4 mb-3 pe-xl-10">Агенты по закупкам</h1>
+            <p class="lead fs-lg mb-0 pe-xxl-10">Эти сотрудники помогут вам со сдачей радиодеталей и бытовой техники</p>
+            </div>
+			{% for agent in region.agent_set.all %}
+				<div class="col-md-6 col-lg-3">
+						<div class="position-relative">
+							<div class="shape rounded bg-soft-primary rellax d-md-block" data-rellax-speed="0" style="bottom: -0.75rem; right: -0.75rem; width: 98%; height: 98%; z-index: 0; transform: translate3d(0px, 0px, 0px);"></div>
+							<div class="card shadow-lg">
+								<figure class="card-img-top"><img class="img-fluid" src={{ agent.agent_image.url }} alt=""></figure>
+								<div class="card-body px-6 py-5">
+									<div class="mb-1 h4like">{{ agent.agent_name }}</div>
+									<p class="mb-0">Агент по закупкам</p>
+								</div>
+								<!--/.card-body -->
+							</div>
+							<!-- /.card -->
+						</div>
+						<!-- /div -->
+					</div>
+			{% endfor %}
+				</div>
+    </section>
+
     </div>
 {% endblock %}
