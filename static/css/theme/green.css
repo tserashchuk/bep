@@ -32506,6 +32506,14 @@ button.hamburger.animate.active:after {
     fill: #8EA3BF;
 }
 
+.text-darkblue {
+    color: #8EA3BF;
+}
+.text-darkblue:before
+{
+    background: #8EA3BF!important;
+}
+
 .text-info .svg-fill {
     fill: #98cbdd;
 }
@@ -38909,6 +38917,7 @@ footer.bg-dark.angled.lower-start:after, footer.bg-dark.angled.upper-start:befor
         padding-left: 50px;
         padding-right: 50px;
         padding-top: 50px;
+
     }
 
     .calcItemSec {
@@ -38995,9 +39004,10 @@ footer.bg-dark.angled.lower-start:after, footer.bg-dark.angled.upper-start:befor
 
 .priceform {
     color: #fff;
+    text-align:right;
     font-size: 20px;
-    padding: 10px;
-    flex-basis: 10%;
+    padding: 10px 0 10px 0;
+    flex-basis: 17%;
     font-weight: 800;
 }
 .priceform:after{
