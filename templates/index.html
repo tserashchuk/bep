@@ -11,7 +11,7 @@
 <div class="content-wrapper">
     <header class="wrapper bg-soft-primary">
         <nav class="navbar center-nav transparent navbar-expand-lg navbar-light">
-            <div class="container flex-lg-row flex-nowrap align-items-center">
+            <div class="container flex-lg-row flex-nowrap align-items-center ">
                 <div class="navbar-brand"><a href={% url 'home' %}><img class='logoimg' src={% static "/img/logo.png" %} alt=""/></a></div>
                 <div class="navbar-collapse offcanvas-nav">
                     <div class="offcanvas-header d-lg-none d-xl-none">
@@ -129,7 +129,7 @@
                         <div class="form-row calcItemSec">
                                 <a onclick="addNewProduct()" class="btn sec-button rounded-pill mb-2 me-1">+</a>
 
-                           <div>
+                           <div class="calcNavs">
                                <a class="btn sec-button rounded-pill mb-2 me-1" onclick="senddata()" data-bs-toggle="modal" data-bs-target="#modal-02">Оформить продажу</a>
                                <span class="badge bg-yellow rounded-pill summarycalc">Итого: <span id="finalprice">0</span></span>
 
@@ -174,7 +174,7 @@
                                  alt=""/>
                             <div class="h4like">Определение технического состояния</div>
                             <p class="mb-2">Мы предлагаем помощь по оценке и документальному сопровождению списания вычислительной техники</p>
-                            <a href="#" class="more hover link-green">Подробнее</a>
+                            <a href="{% url 'spisanie' %}" class="more hover link-green">Подробнее</a>
                         </div>
                         <!--/.card-body -->
                     </div>
@@ -189,7 +189,7 @@
                             <img src="{% static "img/icons/briefcase-2.svg"%}" class="svg-inject icon-svg icon-svg-md mb-3" alt=""/>
                             <div class="h4like">Переработка лома и отходов драг металлов</div>
                             <p class="mb-2">Электронный лом попадет будет утилизирован в соответствии со всеми требованиями.</p>
-                            <a href="#" class="more hover link-green">Подробнее</a>
+                            <a href="{% url 'yuriki' %}" class="more hover link-green">Подробнее</a>
                         </div>
                         <!--/.card-body -->
                     </div>
@@ -202,9 +202,9 @@
                     <div class="card shadow-lg">
                         <div class="card-body">
                             <img src="{% static "img/icons/briefcase-2.svg"%}" class="svg-inject icon-svg icon-svg-md mb-3" alt=""/>
-                            <div class="h4like">Утилизация электронного оборудования</div>
+                            <div class="h4like">Безвозмездная сдача <br/>техники</div>
                             <p class="mb-2">Комплексные услуги по переработке электронного оборудования по всей Беларуси</p>
-                            <a href="#" class="more hover link-green">Подробнее</a>
+                            <a href="{% url 'bezvozm' %}" class="more hover link-green">Подробнее</a>
                         </div>
                         <!--/.card-body -->
                     </div>
