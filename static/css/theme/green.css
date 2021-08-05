@@ -39124,4 +39124,5 @@ footer.bg-dark.angled.lower-start:after, footer.bg-dark.angled.upper-start:befor
     word-spacing: 0.1rem;
     letter-spacing: -0.01rem;
     font-size:14px;
+    min-height: 46px;
 }
