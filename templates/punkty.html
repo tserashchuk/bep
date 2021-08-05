@@ -105,13 +105,13 @@
 										<!-- /.card-header -->
 										<div id="collapse-{{region.id}}" class="collapse" aria-labelledby="heading-{{region.id}}" data-bs-target="#accordion-1">
 											<div class="card-body">
-												<p>{{ region.region_short_desc }}</p>
+
                                             <a  class="btn btn-primary btn-sm rounded-pill me-1 mb-2 mb-md-0" href={% url 'region' region_slug=region.region_slug %}>Подробнее о регионе</a>
 
                                                 <div>{% for punkt in region.punkt_set.all %}
 <div class="pt-3">
 
-                                                    {{ punkt.punkt_name }}
+                                                    <i class="uil uil-arrow-right"></i>{{ punkt.punkt_name }}
                                                     </div>
                                                     {% endfor %}</div>
 											</div>

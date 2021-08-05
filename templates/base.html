@@ -33,7 +33,7 @@
   <span itemprop="name">ООО «РесайклПро»</span>
   <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
       <b>Юридический адрес:</b></br>
-      <span itemprop="streetAddress">ул. М. Лынькова, 125.</span>
+      <span itemprop="streetAddress">ул. М. Лынькова, 123.</span>
       <span itemprop="postalCode">220124</span>
       <span itemprop="addressLocality"> г.Минск</span>
   </div>
@@ -42,11 +42,9 @@
 </div>
 
                     <nav class="nav social social-white">
-                        <a href="#"><i class="uil uil-twitter"></i></a>
-                        <a href="#"><i class="uil uil-facebook-f"></i></a>
-                        <a href="#"><i class="uil uil-dribbble"></i></a>
-                        <a href="#"><i class="uil uil-instagram"></i></a>
-                        <a href="#"><i class="uil uil-youtube"></i></a>
+
+                        <a href="https://www.instagram.com/rpro_by/"><i class="uil uil-instagram"></i></a>
+
                     </nav>
                     <!-- /.social -->
                 </div>
@@ -57,8 +55,8 @@
                 <div class="widget">
 
                     <div class="h4like" class="widget-title text-white mb-3">Контакты</div>
-                    <address class="pe-xl-15 pe-xxl-17">Беларусь, г. Минск, 220033, ул. М. Лынькова 125</address>
-                    <a href="mailto:#">info@rpro.by</a><br/> +375 44 728 60 41 Velcom
+                    <address class="pe-xl-15 pe-xxl-17">Беларусь, г. Минск, 220033, ул. М. Лынькова 123</address>
+                    <a href="mailto:#">info@rpro.by</a><br/> +375 (29) 392 44 92 Velcom
                 </div>
                 <!-- /.widget -->
             </div>
@@ -67,10 +65,10 @@
                 <div class="widget">
                     <div class="h4like" class="widget-title text-white mb-3">Услуги</div>
                     <ul class="list-unstyled mb-0">
-                        <li><a href="#">Списание определение тех состояния</a></li>
-                        <li><a href="#">Утилизация оборудования</a></li>
-                        <li><a href="#">Бесплатный вывоз бытовой техники</a></li>
-                        <li><a href="#">Безвозмездная сдача техники</a></li>
+                        <li><a href={% url 'spisanie' %}>Списание определение тех состояния</a></li>
+                        <li><a href={% url 'yuriki' %}>Утилизация оборудования</a></li>
+                        <li><a href={% url 'vyvoz' %}>Бесплатный вывоз бытовой техники</a></li>
+                        <li><a href={% url 'bezvozm' %}>Безвозмездная сдача техники</a></li>
                     </ul>
                 </div>
                 <!-- /.widget -->
