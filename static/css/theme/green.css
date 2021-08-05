@@ -39114,3 +39114,14 @@ footer.bg-dark.angled.lower-start:after, footer.bg-dark.angled.upper-start:befor
 .b24-form-wrapper.b24-form-border-bottom {
     border-bottom: 5px solid #367345!important;
 }
+
+
+.productsheader{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: #343f52;
+    word-spacing: 0.1rem;
+    letter-spacing: -0.01rem;
+    font-size:14px;
+}
