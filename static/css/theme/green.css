@@ -39105,3 +39105,12 @@ footer.bg-dark.angled.lower-start:after, footer.bg-dark.angled.upper-start:befor
     color:#fff;
     font-size:18px;
 }
+
+
+.b24-form-btn{
+    background:#367345!important;
+}
+
+.b24-form-wrapper.b24-form-border-bottom {
+    border-bottom: 5px solid #367345!important;
+}

@@ -29,7 +29,7 @@ class Home(View):
                                     "NAME": 'sdfsfd',
                                     "STATUS_ID": "NEW",
                                     "OPENED": "Y",
-                                    "ASSIGNED_BY_ID": 890,
+                                    "ASSIGNED_BY_ID": 76,
                                     "PHONE": [{"VALUE": phone, "VALUE_TYPE": "WORK"}],
                                     "UF_CRM_1614585863220":products12
                                 },
