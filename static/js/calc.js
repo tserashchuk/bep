@@ -34,6 +34,7 @@ const csrftoken = getCookie('csrftoken');
 // =====================================================================================================================
 
 const productPrice = (e, p) => {
+    console.log(e)
     let a = Number(e.target.dataset.price.replace(',','.')).toFixed(2) * Number(e.target.value.replace(',','.'))
     console.log('productPrice',a)
     p.innerHTML  = a.toFixed(2)
@@ -49,6 +50,7 @@ const productPrice = (e, p) => {
 
 
 const countProducts = async (e, p, countinfirmer) => {
+    console.log(e)
     countinfirmer.innerHTML = e.path[0].options[e.path[0].options.selectedIndex].dataset.pricetext
     p.setAttribute('data-price', e.target.value)
 }
