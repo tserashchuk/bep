@@ -50,7 +50,8 @@ const productPrice = (e, p) => {
 
 
 const countProducts = async (e, p, countinfirmer) => {
-
+    console.log(e)
+    console.log(e.path)
     countinfirmer.innerHTML = e.path[0].options[e.path[0].options.selectedIndex].dataset.pricetext
     p.setAttribute('data-price', e.target.value)
 }
