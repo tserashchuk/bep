@@ -32,16 +32,15 @@ class ProductAdmin(admin.ModelAdmin):
             csv_file = request.FILES["csv_file"]
             reader = csv.DictReader(codecs.iterdecode(csv_file, 'utf-8'))
             for row in reader:
-                category, catcreate = Category.objects.get_or_create(cat_name = row['категория'])
-                product, prcreate = Product.objects.update_or_create( id=row['код'],
-
-                                                                      defaults={'id':row['код'],
-                                                                                'product_name':row['Название'],
-                                                                                'color':row['ед. изм.'],
-                                                                                'product_price' :row['Цена, р/ед'],
+                category, catcreate = Category.objects.get_or_create(cat_name = row['cat'])
+                product, prcreate = Product.objects.update_or_create( id=row['id'],
+                                                                      defaults={'id':row['id'],
+                                                                                'product_name':row['name'],
+                                                                                'color':row['ed'],
+                                                                                'product_price' :row['price'],
                                                                                 'category':category,
                                                                                 'product_image':'placeholder.jpg',
-                                                                                'product_short_desc':row['Описание']
+                                                                                'product_short_desc':row['desc']
                                                                                 })
                 print(product, prcreate)
             self.message_user(request, "Продукты импортированы")
