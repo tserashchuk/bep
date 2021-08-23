@@ -8,8 +8,11 @@ from django.urls import path
 from recycle.forms import CsvImportForm
 from recycle.models import *
 
+class ArticleAdmin(admin.ModelAdmin):
+    list_display = ('id', 'article_name')
+
 admin.site.register(Category, admin.ModelAdmin)
-admin.site.register(Article, admin.ModelAdmin)
+admin.site.register(Article, ArticleAdmin)
 admin.site.register(Region, admin.ModelAdmin)
 admin.site.register(Punkt, admin.ModelAdmin)
 admin.site.register(Agent, admin.ModelAdmin)

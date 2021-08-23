@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'django_editorjs_fields',
-    'django.contrib.sitemaps'
+    'django.contrib.sitemaps',
+    'django.contrib.sites',
+    'django_bootstrap_breadcrumbs'
 ]
 
 MIDDLEWARE = [
@@ -51,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware'
 ]
 
 ROOT_URLCONF = 'RPRO.urls'
@@ -140,3 +142,5 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
+SITE_ID = 1
+APPEND_SLASH = False

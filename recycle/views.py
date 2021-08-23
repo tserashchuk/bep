@@ -42,7 +42,7 @@ class Home(View):
         return render(request, 'index.html')
 
 class ArticleView(View):
-    def get(self, request,article_slug):
+    def get(self, request, article_slug):
         article = Article.objects.get(article_slug=article_slug)
         return render(request, 'article.html', {'article':article})
 
@@ -108,3 +108,6 @@ class RegionView(View):
 class Spisanie(View):
     def get(self, request):
         return render(request, 'spisanie.html')
+
+def handle_error404(request, exception):
+    return render(request, "404.html", status=404)

@@ -16,42 +16,49 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.contrib.sitemaps.views import sitemap
-from django.urls import path, include, re_path
+from django.contrib.sitemaps import views as sitemapViews
+from django.urls import path, include
 
 from recycle import views, rest
 from recycle.sitemap import CategorySitemap, ArticlesSitemap, ServicesSitemap, RegionSitemap, HomeSitemap
 
+# Sitemap
 sitemaps = {
     'home': HomeSitemap,
     'category': CategorySitemap,
     'article': ArticlesSitemap,
     'service': ServicesSitemap,
     'punkt': RegionSitemap
-
 }
 
+# URLs
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path('', views.Home.as_view(), name='home'),
-    path('category/', views.CategoryView.as_view(), name='category'),
-    path('category/<str:cat_slug>/', views.Products.as_view(), name='products'),
-    path('contact/', views.Contact.as_view(), name='contact'),
-    path('skupka-radiodetaley/', views.Skupka.as_view(), name='skupka'),
-    path('punkty-priema/', views.Punkty.as_view(), name='punkty'),
-    path('news/', views.News.as_view(), name='news'),
-    path('news/<str:article_slug>/', views.ArticleView.as_view(), name='article'),
-    path('priem-bytovoy-tehniki/', views.Bytov.as_view(), name='priem'),
-    path('vyvos-bytovoy-tehniki/', views.Vyvoz.as_view(), name='vyvoz'),
-    path('utilizaciya-tehniki/', views.Yuriki.as_view(), name='yuriki'),
-    path('bezvozmezdnaya/', views.Bezvozmezdno.as_view(), name='bezvozm'),
-    path('spisanie-teh-sostoyanie/', views.Spisanie.as_view(), name='spisanie'),
-    path('region/<str:region_slug>/', views.RegionView.as_view(), name='region'),
-    path('editorjs/', include('django_editorjs_fields.urls')),
+    path('category', views.CategoryView.as_view(), name='category'),
+    path('category/<str:cat_slug>', views.Products.as_view(), name='products'),
+    path('contact', views.Contact.as_view(), name='contact'),
+    path('skupka-radiodetaley', views.Skupka.as_view(), name='skupka'),
+    path('punkty-priema', views.Punkty.as_view(), name='punkty'),
+    path('news', views.News.as_view(), name='news'),
+    path('news/<str:article_slug>', views.ArticleView.as_view(), name='article'),
+    path('priem-bytovoy-tehniki', views.Bytov.as_view(), name='priem'),
+    path('vyvos-bytovoy-tehniki', views.Vyvoz.as_view(), name='vyvoz'),
+    path('utilizaciya-tehniki', views.Yuriki.as_view(), name='yuriki'),
+    path('bezvozmezdnaya', views.Bezvozmezdno.as_view(), name='bezvozm'),
+    path('spisanie-teh-sostoyanie', views.Spisanie.as_view(), name='spisanie'),
+    path('region/<str:region_slug>', views.RegionView.as_view(), name='region'),
+    path('editorjs', include('django_editorjs_fields.urls')),
     path('api-auth/', include(rest.router.urls)),
-    path('sitemap.xml/', sitemap, {'sitemaps': sitemaps}),
-
+    path('sitemap.xml', sitemapViews.sitemap, {
+        'sitemaps': sitemaps,
+        'template_name': 'sitemap.html'
+    })
 ]
 
+# Custom Template for 404 error
+handler404 = "recycle.views.handle_error404"
+
+# For static and media files
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
