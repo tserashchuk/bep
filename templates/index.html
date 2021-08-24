@@ -111,19 +111,7 @@
 
 {% block content %}
 <div class="content-wrapper">
-    <section class="wrapper bg-light">
-            <div class="container pt-3">
-                <nav aria-label="breadcrumb">
-              <ol class="breadcrumb" id="breadcrumblist" itemscope itemtype="http://schema.org/BreadcrumbList">
-                <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                    <a class="inactiveLink" itemprop="item" href="/">Домашняя страница</a>
-                    <meta itemprop="position" content="1" />
-                    <meta itemprop="name" content="Домашняя страница"/>
-                </li>
-              </ol>
-            </nav>
-            </div>
-    </section>
+
     <section class="wrapper bg-soft-primary">
         <div class="container pt-3 pt-md-3 pb-14 pb-md-0">
             <div class="row gx-md-8 gx-lg-12 gy-3 gy-lg-0 mb-13">
@@ -133,9 +121,12 @@
                 </div>
                 <!-- /column -->
                 <div class="col-lg-5 fw-bold">
-                    <br class="lead fs-25 my-3">Если вы хотите сдать бытовую технику - закажите обратный звонок или
-                   <a href="{% url 'vyvoz' %}" class="more hover link-green">узнайте подробности</a></p>
-                      <a href="#" class="btn btn-lg btn-primary rounded-pill me-2" data-bs-toggle="modal" data-bs-target="#modal-01">Заказать звонок</a>
+                    Сайт работает в тестовом режиме - если вы заметили ошибку, пожалуйста, сообщите нам через специальную форму.<br/> Цены на детали могут отличаться от актуальных. Для получения точной информации посетите сайт <a href="https://xn--n1abcb.xn--90ais/">рпро.бел</a><br/><br/>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfF_qVxXB4R4_m0I4K6IvI2VOKknGmQSkGaCfNTtGhCbayI8Q/viewform?fbzx=-2814487850887881893" class="btn btn-lg btn-primary rounded-pill me-2">Сообщение об ошибке</a>
+
+{#                    <br class="lead fs-25 my-3">Если вы хотите сдать бытовую технику - закажите обратный звонок или#}
+{#                   <a href="{% url 'vyvoz' %}" class="more hover link-green">узнайте подробности</a></p>#}
+{#                      <a href="#" class="btn btn-lg btn-primary rounded-pill me-2" data-bs-toggle="modal" data-bs-target="#modal-01">Заказать звонок</a>#}
 
                 </div>
                 <!-- /column -->
