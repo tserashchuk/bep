@@ -113,10 +113,13 @@
                             <li>Утилизируя технику вы бережете экологию</li>
                             <li>Не хотите заниматься доставкой техники? Воспользуйтесь <a href={% url 'vyvoz' %}>услугой беспалтного вывоза</a></li>
                         </ul>
-                        <div class="d-flex justify-content-center justify-content-lg-start"
-                             data-group="page-title-buttons">
-                            <span><a href="#" class="btn btn-lg btn-primary rounded-pill me-2" data-bs-toggle="modal" data-bs-target="#modal-01">Заказать звонок</a></span>
-                            <span><a href="{% url 'punkty' %}" class="btn btn-lg btn-outline-primary rounded-pill">Пункты приема</a></span>
+                        <div class="d-flex justify-content-center justify-content-lg-start" data-group="page-title-buttons">
+                            <div class="d-grid gap-2 d-md-block">
+                              <button type="button" class="btn btn-lg btn-primary rounded-pill me-2" data-bs-toggle="modal" data-bs-target="#modal-01">Заказать звонок</button>
+                              <button class="btn btn-lg btn-outline-primary rounded-pill" type="button"> 
+                                <a href="{% url 'punkty' %}">Пункты приема</a>
+                              </button>
+                            </div>
                         </div>
                     </div>
                     <!--/column -->

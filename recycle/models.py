@@ -17,6 +17,7 @@ class Category(models.Model):
     cat_short_desc = models.TextField('Короткое описание', blank=True)
     cat_desc = models.TextField('Полное описание', blank=True)
     cat_image = models.ImageField('Изображение категории', default='placeholder.jpg')
+    isPrimary = models.BooleanField(default=False)
     pub_date = models.DateTimeField(default=datetime.datetime.now)
 
     def __str__(self):

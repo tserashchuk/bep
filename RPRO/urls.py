@@ -18,6 +18,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.sitemaps import views as sitemapViews
 from django.urls import path, include
+from django.views.generic.base import TemplateView
 
 from recycle import views, rest
 from recycle.sitemap import CategorySitemap, ArticlesSitemap, ServicesSitemap, RegionSitemap, HomeSitemap
@@ -37,6 +38,7 @@ urlpatterns = [
     path('', views.Home.as_view(), name='home'),
     path('category', views.CategoryView.as_view(), name='category'),
     path('category/<str:cat_slug>', views.Products.as_view(), name='products'),
+    path('product/<int:product_id>', views.Singleproduct.as_view(), name='product'),
     path('contact', views.Contact.as_view(), name='contact'),
     path('skupka-radiodetaley', views.Skupka.as_view(), name='skupka'),
     path('punkty-priema', views.Punkty.as_view(), name='punkty'),
@@ -50,6 +52,7 @@ urlpatterns = [
     path('region/<str:region_slug>', views.RegionView.as_view(), name='region'),
     path('editorjs', include('django_editorjs_fields.urls')),
     path('api-auth/', include(rest.router.urls)),
+    path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
     path('sitemap.xml', sitemapViews.sitemap, {
         'sitemaps': sitemaps,
         'template_name': 'sitemap.html'

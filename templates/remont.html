@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 
-    {% block page_title %}Списание вычислительной техники в организации — «РесайклПро»{% endblock %}
+    {% block page_title %}Утилизация электронного оборудования{% endblock %}
 
     {% block opg %}
-    <meta property="og:title" content="Списание вычислительной техники в организации — «РесайклПро»" />
-    <meta property="og:description" content="Списание бытовой техники в организации ✓ Определение тех. состояния ✓ Составление акта ✓ Выполним экспертизу в кратчайшие сроки! Комплексный подход." />
+    <meta property="og:title" content="Утилизация оргтехники | Сдача оргтехники на утилизацию — «РесайклПро»" />
+    <meta property="og:description" content="➤ Утилизация списанной оргтехники ✅ 100% Легально ✅ Самые низкие цены на переработку ✅ Бесплатный вызов ✅ Вам не надо платить!" />
     <meta property="og:url" content="{{ request.build_absolute_uri }}" />
-    <meta property="og:image" content="{% static '/img/logo.png' %}"/>
+    <meta property="og:image" content="{% static '1.jpg' %}"/>
     {% endblock %}
     {% block scripts %}
     <script type="application/ld+json">
@@ -16,28 +16,36 @@
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
-        "name": "С какой техникой мы работаем",
+        "name": "В каком состоянии принимается техника",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "<p>Мы работаем с бытовой, компьютерной и оргтехникой. Исключение составляет сложное медицинское оборудование.</p>"
+          "text": "<p>Техника, которую принимает “РесайклПро” должна быть сборная и комплектная.</p>"
         }
       }, {
         "@type": "Question",
-        "name": "Какие документы вам необходимо подготовить",
+        "name": "Пакет документов, который требуется от вас",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "<p>К моменту выезда нашего специалиста вам необходимо подготовить заявку-опись, где будет указан перечень техники с инвентарными номерами.</p>"
+          "text": "<p>Накладная, Заявка-опись, Удостоверение об отсутствии взрывоопасных веществ, Доверенность на подписанта по акту приема-передачи (если это не подписант по договору).</p>"
         }
       }, {
         "@type": "Question",
-        "name": "Срок выполнения работ",
+        "name": "Пакет документов, предоставляемый “РесайклПро”",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "<p>С момента заключения договора, в течение 7-8 рабочих дней вы получаете заключение с актом выполненных работ.</p>"
+          "text": "<p>Акт приема-передачи, Акт первичного обсчета с актом выполненных работ, Рассчет-паспорт</p>"
+        }
+      }, {
+        "@type": "Question",
+        "name": "Сроки выполнения работ",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "<p>Весь цикл выполнения работ занимает не более полугода, с момента отгрузки техники до момента получения рассчет-паспорта.</p>"
         }
       }]
     }
     </script>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -47,6 +55,46 @@
               "@id": "{% static '1.jpg' %}",
               "url": "{% static '1.jpg' %}",
               "contentUrl": "{% static '1.jpg' %}"
+          }, {
+              "@type": "ImageObject",
+              "@id": "{% static '/img/brands/c1.jpg' %}",
+              "url": "{% static '/img/brands/c1.jpg' %}",
+              "contentUrl": "{% static '/img/brands/c1.jpg' %}"
+          }, {
+              "@type": "ImageObject",
+              "@id": "{% static '/img/brands/c2.jpg' %}",
+              "url": "{% static '/img/brands/c2.jpg' %}",
+              "contentUrl": "{% static '/img/brands/c2.jpg' %}"
+          }, {
+              "@type": "ImageObject",
+              "@id": "{% static '/img/brands/c3.jpg' %}",
+              "url": "{% static '/img/brands/c3.jpg' %}",
+              "contentUrl": "{% static '/img/brands/c3.jpg' %}"
+          }, {
+              "@type": "ImageObject",
+              "@id": "{% static '/img/brands/c4.jpg' %}",
+              "url": "{% static '/img/brands/c4.jpg' %}",
+              "contentUrl": "{% static '/img/brands/c4.jpg' %}"
+          }, {
+              "@type": "ImageObject",
+              "@id": "{% static '/img/brands/c5.jpg' %}",
+              "url": "{% static '/img/brands/c5.jpg' %}",
+              "contentUrl": "{% static '/img/brands/c5.jpg' %}"
+          }, {
+              "@type": "ImageObject",
+              "@id": "{% static '/img/brands/c6.jpg' %}",
+              "url": "{% static '/img/brands/c6.jpg' %}",
+              "contentUrl": "{% static '/img/brands/c6.jpg' %}"
+          }, {
+              "@type": "ImageObject",
+              "@id": "{% static '/img/brands/c7.jpg' %}",
+              "url": "{% static '/img/brands/c7.jpg' %}",
+              "contentUrl": "{% static '/img/brands/c7.jpg' %}"
+          }, {
+              "@type": "ImageObject",
+              "@id": "{% static '/img/brands/c8.jpg' %}",
+              "url": "{% static '/img/brands/c8.jpg' %}",
+              "contentUrl": "{% static '/img/brands/c8.jpg' %}"
           }, {
               "@type": "ImageObject",
               "@id": "{% static '/img/avatars/4471.jpg' %}",
@@ -84,16 +132,16 @@
                         <meta itemprop="name" content="Домашняя страница"/>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                        <a class="inactiveLink" itemprop="item" href="{% url 'spisanie'  %}">Списание вычислительной техники</a>
+                        <a class="inactiveLink" itemprop="item" href="{% url 'yuriki'  %}">Утилизация электронного оборудования</a>
                         <meta itemprop="position" content="2" />
-                        <meta itemprop="name" content="Списание вычислительной техники"/>
+                        <meta itemprop="name" content="Утилизация электронного оборудования"/>
                     </li>
                   </ol>
                 </nav>
             </div>
         </section>
 		<section class="wrapper bg-light">
-			<div class="container pt-12 pt-md-12">
+			<div class="container pt-11 pt-md-11">
 					<div class="row gx-lg-0 gx-xl-8 gy-10 gy-md-13 gy-lg-0 mb-7 mb-md-10 mb-lg-16 align-items-center">
 					<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-1 position-relative order-lg-2" data-cue="zoomIn">
 						<div class="shape bg-dot primary rellax w-17 h-19" data-rellax-speed="1" style="top: -1.7rem; left: -1.5rem;"></div>
@@ -102,25 +150,23 @@
 					</div>
 					<!--/column -->
 					<div class="col-lg-5 mt-lg-n10 text-center text-lg-start" data-group="page-title" >
-						<h1 class="display-1 mb-5">Списание. Определение тех состояния</h1>
-						<p class="lead fs-25 lh-sm mb-7 px-md-10 px-lg-0">Экспертиза технического состояния техники</p>
+						<h1 class="display-1 mb-5">Переработка электронного оборудования</h1>
+						<p class="lead fs-25 lh-sm mb-7 px-md-10 px-lg-0">Избавим Вашу компанию от ненужной техники и электронного оборудования «под ключ»</p>
 						<ul>
-							<li>Выезд специалиста для осмотра техники</li>
-							<li>Проведение оценки технического состояния</li>
-							<li>Предоставим документы по списанию</li>
+							<li>Проведем оценку технического состояния</li>
+							<li>Пераработка и утилизация электронного оборудования</li>
+							<li>Демонтаж обрудования</li>
+							<li>Специальные условия для бюджетных организаций</li>
 						</ul>
 						<div class="d-flex justify-content-center justify-content-lg-start" data-group="page-title-buttons">
-                            <div class="d-grid gap-2 d-md-block">
-                                <button type="button" class="btn btn-lg btn-primary rounded-pill me-2" data-bs-toggle="modal" data-bs-target="#modal-03">Отправить заявку</button>
-                                <button type="button" class="btn btn-lg btn-primary rounded-pill me-2" data-bs-toggle="modal" data-bs-target="#modal-01">Заказать звонок</button>
-                            </div>
-                        </div>
+							<span><a href="#" class="btn btn-lg btn-primary rounded-pill me-2"data-bs-toggle="modal" data-bs-target="#modal-01">Задать вопрос</a></span>
+						</div>
 					</div>
 					<!--/column -->
 				</div>
 		</div>
 		</section>
-	<section class="wrapper bg-light">
+			<section class="wrapper bg-light">
       <div class="container pb-10">
         <div class="row gx-md-8 gx-xl-12 gy-10 align-items-center">
              <div class="col-lg-6">
@@ -137,7 +183,7 @@
                   </div>
                   <div>
                     <div class="mb-1 h4like">Быстрые сроки</div>
-                    <p class="mb-0">Проведение всех работ до 7 дней</p>
+                    <p class="mb-0">Проведение всех работ до 7 месяцев</p>
                   </div>
                 </div>
               </div>
@@ -167,7 +213,7 @@
                   </div>
                   <div>
                     <div class="mb-1 h4like">Работаем по всей Беларуси</div>
-                    <p class="mb-0">Услуга по списанию техники оказывается без регионального ограничения</p>
+                    <p class="mb-0">Услуга по утилизации оборудования без регионального ограничения</p>
                   </div>
                 </div>
               </div>
@@ -196,21 +242,32 @@
                             class="icon btn btn-circle btn-lg btn-lg btn-primary disabled mb-4"><span
                             class="number">01</span></span>
                         <div class="mb-1 h4like">Заполните документы</div>
-                        <p>Необходимо оформить пакет документов (заявка-опись, договор) - <a href="#">скачать</a></p>
+                        <p>Необходимо оформить пакет документов, для сдачи техники (заявка-опись,
+                            доверенность, удостоверение и ТТН, договор) - <a href="#">скачать</a></p>
                     </div>
                     <!--/column -->
                      <div class="col-md-6 col-lg-3"><span
                             class="icon btn btn-circle btn-lg btn-lg btn-soft-primary disabled mb-4"><span
                             class="number">02</span></span>
-               <div class="mb-1 h4like">Выезд специалиста</div>
-                        <p>Проводится оценка технического состояния техники</p>
+                        <div class="mb-1 h4like">Отгрузка, акт</div>
+                        <p>Отгрузить технику, получить акт приема-передачи оборудования,
+получить акт обследования и первичной переработки лома, содержащего драгоценные
+металлы</p>
                     </div>
                     <!--/column -->
                     <div class="col-md-6 col-lg-3"><span
                             class="icon btn btn-circle btn-lg btn-soft-primary disabled mb-4"><span
                             class="number">03</span></span>
-                        <div class="mb-1 h4like">Документация</div>
-                        <p>Выставление счет-протокола и акта определения технического состояния</p>
+                        <div class="mb-1 h4like">Оплата</div>
+                        <p>Оплатить (или по счету-протоколу или после получения акта выполненных работ)</p>
+                    </div>
+                    <!--/column -->
+                     <div class="col-md-6 col-lg-3"><span
+                            class="icon btn btn-circle btn-lg btn-soft-primary disabled mb-4"><span
+                            class="number">04</span></span>
+                        <div class="mb-1 h4like">Получение денег</div>
+                        <p>Получить расчет-паспорт о содержании драгоценных металлов и
+получить денежные средства на свой расчетный счет за сданные драгметаллы в госфонд</p>
                     </div>
                     <!--/column -->
                 </div>
@@ -218,7 +275,24 @@
             </div>
             <!-- /.container -->
         </section>
+<section class="wrapper bg-light">
+			<div class="container pb-10">
+				<h2 class="display-5 mb-7 center-block">Нам доверяют</h2>
+				<div class="carousel owl-carousel clients" data-margin="30" data-loop="true" data-dots="false" data-autoplay="true" data-autoplay-timeout="3000" data-responsive='{"0":{"items": "2"}, "768":{"items": "4"}, "992":{"items": "5"}, "1200":{"items": "6"}, "1400":{"items": "7"}}'>
+					<div class="item px-5"><img src={% static "/img/brands/c1.jpg" %} alt="" /></div>
+					<div class="item px-5"><img src={% static "/img/brands/c2.jpg" %} alt="" /></div>
+					<div class="item px-5"><img src={% static "/img/brands/c3.jpg" %} alt="" /></div>
+					<div class="item px-5"><img src={% static "/img/brands/c4.jpg" %} alt="" /></div>
+					<div class="item px-5"><img src={% static "/img/brands/c5.jpg" %} alt="" /></div>
+					<div class="item px-5"><img src={% static "/img/brands/c6.jpg" %} alt="" /></div>
+					<div class="item px-5"><img src={% static "/img/brands/c7.jpg" %} alt="" /></div>
+					<div class="item px-5"><img src={% static "/img/brands/c8.jpg" %} alt="" /></div>
 
+				</div>
+				<!-- /.owl-carousel -->
+			</div>
+			<!-- /.container -->
+		</section>
 		<section class="wrapper bg-light">
 			<div class="container ">
 				<div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
@@ -278,13 +352,13 @@
 		</section>
 
 
-    <section class="wrapper bg-light wrapper-border">
+				<section class="wrapper bg-light wrapper-border">
 			<div class="container py-14 py-md-16">
 				<div class="card bg-soft-primary rounded-4">
 					<div class="card-body p-md-10 p-xl-11">
 						<div class="row gx-lg-8 gx-xl-12 gy-10">
 							<div class="col-lg-6">
-								  <h2 class="display-4 mb-4">Часто задаваемые вопросы</h2>
+  <h2 class="display-4 mb-4">Часто задаваемые вопросы</h2>
                                 <p class="lead fs-lg mb-0">Если вы не нашли ответа на свой вопрос позвоните нам или закажите <a href="#" data-bs-toggle="modal" data-bs-target="#modal-01">обратный звонок</a></p>
 							</div>
 							<!--/column -->
@@ -292,14 +366,13 @@
 								<div class="accordion accordion-wrapper" id="accordionExample">
 									<div class="card plain accordion-item">
 										<div class="card-header" id="headingOne">
-											<button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">С какой техникой мы работаем</button>
+											<button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">В каком состоянии принимается техника
+</button>
 										</div>
 										<!--/.card-header -->
 										<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 											<div class="card-body">
-												<p>Мы работаем с бытовой, компьютерной и оргтехникой.
-Исключение составляет сложное медицинское оборудование.
-</p>
+												<p>Техника, которую принимает “РесайклПро” должна быть сборная и комплектная.</p>
 											</div>
 											<!--/.card-body -->
 										</div>
@@ -308,12 +381,13 @@
 									<!--/.accordion-item -->
 									<div class="card plain accordion-item">
 										<div class="card-header" id="headingTwo">
-											<button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Какие документы вам необходимо подготовить</button>
+											<button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Пакет документов, который требуется от вас</button>
 										</div>
 										<!--/.card-header -->
 										<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
 											<div class="card-body">
-												<p>К моменту выезда нашего специалиста вам необходимо подготовить заявку-опись, где будет указан перечень техники с инвентарными номерами.</p>
+												<p>Накладная, Заявка-опись, Удостоверение об отсутствии взрывоопасных веществ, Доверенность на подписанта по акту приема-передачи (если это не подписант по договору).
+</p>
 											</div>
 											<!--/.card-body -->
 										</div>
@@ -322,19 +396,34 @@
 									<!--/.accordion-item -->
 									<div class="card plain accordion-item">
 										<div class="card-header" id="headingThree">
-											<button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Срок выполнения работ</button>
+											<button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Пакет документов, предоставляемый “РесайклПро”</button>
 										</div>
 										<!--/.card-header -->
 										<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
 											<div class="card-body">
-												<p>С момента заключения договора, в течение 7-8 рабочих дней вы получаете заключение с актом выполненных работ.</p>
+												<p>Акт приема-передачи, Акт первичного обсчета с актом выполненных работ, Рассчет-паспорт
+</p>
 											</div>
 											<!--/.card-body -->
 										</div>
 										<!--/.accordion-collapse -->
 									</div>
 									<!--/.accordion-item -->
-
+									<div class="card plain accordion-item">
+										<div class="card-header" id="headingFour">
+											<button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Сроки выполнения работ</button>
+										</div>
+										<!--/.card-header -->
+										<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+											<div class="card-body">
+												<p>Весь цикл выполнения работ занимает не более полугода, с момента отгрузки техники до момента получения рассчет-паспорта.
+</p>
+											</div>
+											<!--/.card-body -->
+										</div>
+										<!--/.accordion-collapse -->
+									</div>
+									<!--/.accordion-item -->
 								</div>
 								<!--/.accordion -->
 							</div>
@@ -352,26 +441,4 @@
 	</div>
 	<!-- /.content-wrapper -->
 
-
-
-
-    <div class="modal fade" id="modal-03" tabindex="-1" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md">
-        <div class="modal-content text-center">
-            <div class="modal-body">
-                  <h3>Отправьте заявку</h3>
-               <script data-b24-form="inline/16/dfygj9" data-skip-moving="true">
-        (function(w,d,u){
-                var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
-                var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
-        })(window,document,'https://cdn-ru.bitrix24.by/b11356450/crm/form/loader_16.js');
-</script>
-                </script>
-            </div>
-            <!--/.modal-body -->
-        </div>
-        <!--/.modal-content -->
-    </div>
-    <!--/.modal-dialog -->
-</div>
         {% endblock %}

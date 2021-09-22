@@ -20,6 +20,7 @@ admin.site.register(Agent, admin.ModelAdmin)
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
+    search_fields = ['product_name']
 
     change_list_template = "admin/products_changelist.html"
 

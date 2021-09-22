@@ -1,20 +1,24 @@
 import json
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.views import View
+from django.core.paginator import Paginator
+from django.core.mail import send_mail
+from django.conf import settings
 
 from recycle.models import *
 from bitrix24 import *
 
 class Home(View):
     def get(self, request):
-        cateory = Category.objects.all()
+        categorys = Category.objects.all()
         data = []
-        for cat in cateory:
+        for cat in categorys:
             products = cat.product_set.all()
             data.append({'categoryName': cat.cat_name, 'categoryID': cat.id})
         data = json.dumps(list(data))
-        return render(request, 'index.html')
+        return render(request, 'index.html',{'categorys': categorys})
 
     def post(self, request):
 
@@ -22,7 +26,7 @@ class Home(View):
             products12 = request.POST['ppp']
             phone = request.POST['PHONE']
             name = request.POST['NAME']
-            bx24 = Bitrix24('https://rpro.bitrix24.by/rest/16/nz5xj3a8vr0hv140/')
+            bx24 = Bitrix24('https://rpro.bitrix24.by/rest/92/qlddk8ebw7pcwiz6/')
             bx24.callMethod('crm.lead.add',
                             fields={
                                     "TITLE": name,
@@ -57,11 +61,34 @@ class Products(View):
         return render(request, 'products.html', {'category': category})
 
 
-class Contact(View):
-    def get(self, request):
-        products = Product.objects.all()
-        return render(request, 'contact.html', {'products': products})
+class Singleproduct(View):
+    def get(self, request, product_id):
+        product = Product.objects.get(id=product_id)
+        return render(request, 'product.html', {'product': product})
 
+
+class Contact(View):
+    messageSent = False
+    products = Product.objects.all()
+    
+    def get(self, request):
+        return render(request, 'contact.html', {'products': self.products, 'messageSent':  self.messageSent})
+        
+    def post(self, request):
+        name = request.POST['name']
+        surname = request.POST['surname']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        message = request.POST['message']
+        
+        send_mail(
+            f"{surname} {name}",
+            message,
+            email,
+            ["dierbekibragimov@gmail.com  "]
+        )
+        messageSent = True
+        return render(request, 'contact.html', {'products': self.products, 'messageSent': messageSent}) 
 
 class Skupka(View):
     def get(self, request):
@@ -79,10 +106,13 @@ class News(View):
     def get(self, request):
         stock = False
         articles = Article.objects.all()
+        paginator = Paginator(articles, 4)
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
         for article in articles:
             if article.isStock == True:
                 stock = True
-        return render(request, 'news.html', {'articles':articles, 'stock':stock})
+        return render(request, 'news.html', {'articles':articles, 'stock':stock, 'page_obj': page_obj})
 
 class Bytov(View):
     def get(self, request):
@@ -111,3 +141,4 @@ class Spisanie(View):
 
 def handle_error404(request, exception):
     return render(request, "404.html", status=404)
+# a.bobkov@rpro.by

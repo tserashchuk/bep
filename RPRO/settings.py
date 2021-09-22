@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-!5i9)j-2y^2i@m&x66u#)#3+++@01)bd&-jhm)!fvu-+f!3lks
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['rpro.pythonanywhere.com','127.0.0.1:8000','127.0.0.1']
+#ALLOWED_HOSTS = ['rpro.pythonanywhere.com','127.0.0.1:8000','127.0.0.1']
+ALLOWED_HOSTS = ['localhost','0.0.0.0','178.159.45.115','127.0.0.1']
 
 # Application definition
 
@@ -142,5 +143,13 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
+
 SITE_ID = 1
 APPEND_SLASH = False
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "ibrimow@gmail.com"
+EMAIL_HOST_PASSWORD="vidysmhhtdbxmohg"

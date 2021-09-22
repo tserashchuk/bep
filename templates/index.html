@@ -108,151 +108,134 @@
     }
     </script>
     {% endblock %}
+{% block header_class %}
+    <header class="wrapper"
+            style="background-size:cover; background-repeat: no-repeat; background: url('https://images.unsplash.com/photo-1588011930968-eadac80e6a5a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1100&q=80')">
 
-{% block content %}
-<div class="content-wrapper">
-
-    <section class="wrapper bg-soft-primary">
+{% endblock %}
+{% block header_end %}
+    <section class="wrapper py-15">
         <div class="container pt-3 pt-md-3 pb-14 pb-md-0">
             <div class="row gx-md-8 gx-lg-12 gy-3 gy-lg-0 mb-13">
                 <div class="col-lg-6">
-                    <h1 class="display-1 fs-66 lh-xs mb-0">Мы бесплатно вывозим бытовую технику и скупаем
-                        радиодетали</h1>
+                    <h1 class="display-1 fs-66 lh-xs mb-0">20 лет продаем редукторы и электродвигатели</h1>
                 </div>
                 <!-- /column -->
                 <div class="col-lg-5 fw-bold">
-                    Сайт работает в тестовом режиме - если вы заметили ошибку, пожалуйста, сообщите нам через специальную форму.<br/> Цены на детали могут отличаться от актуальных. Для получения точной информации посетите сайт <a href="https://xn--n1abcb.xn--90ais/">рпро.бел</a><br/><br/>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfF_qVxXB4R4_m0I4K6IvI2VOKknGmQSkGaCfNTtGhCbayI8Q/viewform?fbzx=-2814487850887881893" class="btn btn-lg btn-primary rounded-pill me-2">Сообщение об ошибке</a>
 
-{#                    <br class="lead fs-25 my-3">Если вы хотите сдать бытовую технику - закажите обратный звонок или#}
-{#                   <a href="{% url 'vyvoz' %}" class="more hover link-green">узнайте подробности</a></p>#}
-{#                      <a href="#" class="btn btn-lg btn-primary rounded-pill me-2" data-bs-toggle="modal" data-bs-target="#modal-01">Заказать звонок</a>#}
+
+                    <br class="lead fs-25 my-3">Если вы хотите сдать бытовую технику - закажите обратный звонок или
+                    <a href="{% url 'vyvoz' %}" class="more hover link-green">узнайте подробности</a><br/><br/>
+                    <a href="#" class="btn btn-lg btn-primary rounded-pill me-2" data-bs-toggle="modal"
+                       data-bs-target="#modal-01">Заказать звонок</a>
 
                 </div>
                 <!-- /column -->
             </div>
             <!-- /.row -->
-            <div class="position-relative formGlobal">
-                <div class="calcForm">
-                    <div class="calcheader">Калькулятор стоимости радиодеталей</div>
-                    <form>
 
-                        <div id="calcForm">
-
-
-                        </div>
-                        <div class="form-row calcItemSec">
-                                <a onclick="addNewProduct()" class="btn sec-button rounded-pill mb-2 me-1">+</a>
-
-                           <div class="calcNavs">
-                               <a class="btn sec-button rounded-pill mb-2 me-1" onclick="senddata()" data-bs-toggle="modal" data-bs-target="#modal-02">Оформить продажу</a>
-                               <span class="badge bg-yellow rounded-pill summarycalc">Итого: <span id="finalprice">0</span></span>
-
-                           </div>
-                           </div>
-                    </form>
-                </div>
-                <div class="shape bg-dot primary rellax w-17 h-21" data-rellax-speed="1"
-                     style="top: -2.5rem; right: -2.7rem;"></div>
-            </div>
         </div>
         <!-- /.container -->
     </section>
-    <!-- /section -->
-    <section class="wrapper bg-light">
-        <div class="container pt-14">
-            <div class="row gx-md-5 gy-5 mt-n18  ">
+    </header>
+{% endblock %}
 
-                <div class="col-md-6 col-xl-3">
-                    <span class="fs-15 text-uppercase text-line text-yellow"><strong>Физическим лицам</strong></span>
-                    <div class="card shadow-lg">
-                        <div class="card-body">
+{% block content %}
+    <div class="content-wrapper">
+        <!-- /section -->
 
-                            <img src="{% static "img/icons/user.svg" %}"
-                                 class="svg-inject icon-svg icon-svg-md text-yellow mb-3" alt=""/>
-                            <div class="h4like">Скупка радиодеталей у физических<br/>лиц</div>
-                            <p class="mb-2">Более 10-ти приемных пунктов по всей Беларуси. Выездные заготовки в любом регионе</p>
-                            <a href="{% url 'category' %}" class="more hover link-yellow">Прайс-лист</a>
-                        </div>
-                        <!--/.card-body -->
-                    </div>
-                    <!--/.card -->
-                </div>
-
-                <!--/column -->
-
-
-             <div class="col-md-6 col-xl-3">
-               <span class="fs-15 text-uppercase text-darkblue text-line "><strong>Юридическим лицам</strong></span>
-
-                    <div class="card shadow-lg">
-                        <div class="card-body">
-                            <img src="{% static "img/icons/briefcase-2.svg"%}" class="svg-inject icon-svg icon-svg-md mb-3" alt=""/>
-                            <div class="h4like">Переработка лома и отходов драг металлов</div>
-                            <p class="mb-2">Электронный лом попадет будет утилизирован в соответствии со всеми требованиями.</p>
-                            <a href="{% url 'yuriki' %}" class="more hover link-green">Подробнее</a>
-                        </div>
-                        <!--/.card-body -->
-                    </div>
-                    <!--/.card -->
-                </div>
-                <!--/column -->
-                 <div class="col-md-6 col-xl-3">
-                    <span class="fs-15 text-uppercase text-line text-darkblue"><strong>Юридическим лицам</strong></span>
-                    <div class="card shadow-lg">
-                        <div class="card-body">
-                            <img src="{% static "img/icons/briefcase-2.svg"%}" class="svg-inject icon-svg icon-svg-md text-green mb-3"
-                                 alt=""/>
-                            <div class="h4like">Определение технического состояния</div>
-                            <p class="mb-2">Мы предлагаем помощь по оценке и документальному сопровождению списания вычислительной техники</p>
-                            <a href="{% url 'spisanie' %}" class="more hover link-green">Подробнее</a>
-                        </div>
-                        <!--/.card-body -->
-                    </div>
-                    <!--/.card -->
-                </div>
-                <!--/column -->
-                <div class="col-md-6 col-xl-3">
-                                        <span class="fs-15 text-uppercase text-line text-darkblue"><strong>Юридическим лицам</strong></span>
-
-                    <div class="card shadow-lg">
-                        <div class="card-body">
-                            <img src="{% static "img/icons/briefcase-2.svg"%}" class="svg-inject icon-svg icon-svg-md mb-3" alt=""/>
-                            <div class="h4like">Безвозмездная сдача <br/>техники</div>
-                            <p class="mb-2">Комплексные услуги по переработке электронного оборудования по всей Беларуси</p>
-                            <a href="{% url 'bezvozm' %}" class="more hover link-green">Подробнее</a>
-                        </div>
-                        <!--/.card-body -->
-                    </div>
-                    <!--/.card -->
-                </div>
-                <!--/column -->
-
-            </div>
-            <!--/.row -->
-
-            <!--/.row -->
-        </div>
-        <!-- /.container -->
-    </section>
 <section class="wrapper bg-light">
-			<div class="container pt-10">
-				<h2 class="display-5 mb-7 center-block">Нам доверяют</h2>
-				<div class="carousel owl-carousel clients" data-margin="30" data-loop="true" data-dots="false" data-autoplay="true" data-autoplay-timeout="3000" data-responsive='{"0":{"items": "2"}, "768":{"items": "4"}, "992":{"items": "5"}, "1200":{"items": "6"}, "1400":{"items": "7"}}'>
-					<div class="item px-5"><img src={% static "/img/brands/c1.jpg" %} alt="Название бренда" /></div>
-					<div class="item px-5"><img src={% static "/img/brands/c2.jpg" %} alt="Название бренда" /></div>
-					<div class="item px-5"><img src={% static "/img/brands/c3.jpg" %} alt="Название бренда" /></div>
-					<div class="item px-5"><img src={% static "/img/brands/c4.jpg" %} alt="Название бренда" /></div>
-					<div class="item px-5"><img src={% static "/img/brands/c5.jpg" %} alt="Название бренда" /></div>
-					<div class="item px-5"><img src={% static "/img/brands/c6.jpg" %} alt="Название бренда" /></div>
-					<div class="item px-5"><img src={% static "/img/brands/c7.jpg" %} alt="Название бренда" /></div>
-					<div class="item px-5"><img src={% static "/img/brands/c8.jpg" %} alt="Название бренда" /></div>
+			<div class="container pb-10 pt-10">
+				<div class="grid grid-view projects-masonry">
 
+					<div class="row gx-md-8 gy-10 gy-md-8 isotope">
+
+                        {% for category in categorys %}
+						<div class="project item col-md-6 col-xl-3 product">
+                        <div class="post-header">
+									<div class="post-title h3">{{ category.cat_name }}</div>
+								</div>
+							<figure class="lift rounded"><a href={% url 'products' cat_slug=category.cat_slug %}> <img src={{ category.cat_image.url }} alt="" /></a></figure>
+							<div class="project-details d-flex justify-content-center flex-column">
+
+								<!-- /.post-header -->
+							</div>
+							<!-- /.project-details -->
+						</div>
+                        {% endfor %}
+
+					</div>
+					<!-- /.row -->
 				</div>
-				<!-- /.owl-carousel -->
+				<!-- /.grid -->
 			</div>
 			<!-- /.container -->
 		</section>
+
+ <section class="wrapper bg-light">
+      <div class="container pb-10">
+        <div class="row gx-md-8 gx-xl-12 gy-10 align-items-center">
+             <div class="col-lg-6">
+            <h2 class="display-4 mb-5">Наши преимущества</h2>
+            <p>Мы в постоянном совершенствовании процесса работы и основной ориентир этого процесса - потребность клиена в комфортном получении качественной услуги и в гарантии надежности сотрудничества.</p>
+            <p class="mb-6">Такая работа позволяет нам предоставлять хорошие условия не только в момент разовой сделки, но и улучшать совместную работу в долгосрочных договоренностях с клиентом</p>
+          </div>
+          <div class="col-lg-6 order-lg-2 pb-10">
+            <div class="card shadow-lg me-lg-6">
+              <div class="card-body p-6">
+                <div class="d-flex flex-row">
+                  <div>
+                    <span class="icon btn btn-circle btn-lg btn-soft-primary disabled me-4"><span class="number">01</span></span>
+                  </div>
+                  <div>
+                    <div class="mb-1 h4like">Быстрые сроки</div>
+                    <p class="mb-0">Проведение всех работ до 7 дней</p>
+                  </div>
+                </div>
+              </div>
+              <!--/.card-body -->
+            </div>
+            <!--/.card -->
+            <div class="card shadow-lg ms-lg-13 mt-6">
+              <div class="card-body p-6">
+                <div class="d-flex flex-row">
+                  <div>
+                    <span class="icon btn btn-circle btn-lg btn-soft-primary disabled me-4"><span class="number">02</span></span>
+                  </div>
+                  <div>
+                    <div class="mb-1 h4like">Низкая стоимость выполнения работ</div>
+                    <p class="mb-0">Готовы подтвердить при первичной оценке</p>
+                  </div>
+                </div>
+              </div>
+              <!--/.card-body -->
+            </div>
+            <!--/.card -->
+            <div class="card shadow-lg mx-lg-6 mt-6">
+              <div class="card-body p-6">
+                <div class="d-flex flex-row">
+                  <div>
+                    <span class="icon btn btn-circle btn-lg btn-soft-primary disabled me-4"><span class="number">03</span></span>
+                  </div>
+                  <div>
+                    <div class="mb-1 h4like">Работаем по всей Беларуси</div>
+                    <p class="mb-0">Услуга по списанию техники оказывается без регионального ограничения</p>
+                  </div>
+                </div>
+              </div>
+              <!--/.card-body -->
+            </div>
+            <!--/.card -->
+          </div>
+          <!--/column -->
+
+          <!--/column -->
+        </div>
+        <!--/.row -->
+
+      </div>
+      <!-- /.container -->
+    </section>
     <section class="wrapper bg-light">
             <div class="container py-10">
                 <div class="card bg-soft-primary rounded-4">
@@ -365,31 +348,7 @@
         </section>
 
 
-<section class="wrapper bg-light">
-      <div class="container pb-14">
-        <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
-          <div class="col-lg-7 order-lg-2">
-            <figure><img class="w-auto" src={% static "img/derevo.jpg" %} alt=""></figure>
-          </div>
-          <!--/column -->
-          <div class="col-lg-5">
-            <h3 class="display-5 mb-7">Почему выбирают нас?</h3>
-              <div><p><i class="uil uil-arrow-right"></i><b>РесайклПро производит прием отработанных и вышедших из эксплуатации электронных устройств и радиоэлементов  в любом состоянии.</b> Также мы оказываем услуги по демонтажу, переработке  и сдаче полученных в результате переработки драгметаллов в Госфонд Республики Беларусь.
-              </p>
-                 <p><i class="uil uil-arrow-right"></i> <b>РесайклПро - лицензированный переработчик</b>
-Мы имеем специальное разрешение (лицензию) на право осуществления деятельности, связанной с драгоценными металлами и драгоценными камнями и включены в реестр переработчиков.
-</p>
-               <p>   <i class="uil uil-arrow-right"></i><b>Работаем напрямую с перерабатывающими предприятиями</b>
-                   Благодаря прямым контактам с перерабатывающими предприятиями, РесайклПро принимает электрооборудование и радиодетали по выгодным для вас ценам.</p></div>
-            <!--/.accordion -->
-          </div>
-          <!--/column -->
-        </div>
-        <!--/.row -->
-      </div>
-      <!-- /.container -->
-    </section>
-</div>
+    </div>
 
 
 {% endblock %}
